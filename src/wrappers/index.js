@@ -4,7 +4,7 @@ export default ngModule => {
   function addWrappers(formlyConfigProvider) {
     formlyConfigProvider.setWrapper([
       {
-        name: 'KoappLabel',
+        name: 'koappLabel',
         template: require('./label.html'),
         apiCheck: check => ({
           templateOptions: {
@@ -14,7 +14,7 @@ export default ngModule => {
           }
         })
       },
-      {name: 'KoappHasError', template: require('./has-error.html')}
+      {name: 'koappHasError', template: require('./has-error.html')}
     ]);
   }
 };
