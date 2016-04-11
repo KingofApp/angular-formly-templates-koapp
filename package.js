@@ -4,8 +4,8 @@
 try {
   Package.describe({
     name: 'formly:angular-formly-templates-koapp',
-    summary: '(official): Bootstrap templates for angular-formly',
-    version: '0.0.1',
+    summary: '(official): Koapp templates for angular-formly',
+    version: '1.0.0',
     git: 'https://github.com/formly-js/angular-formly-templates-koapp.git',
   })
 
