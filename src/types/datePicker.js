@@ -1,8 +1,8 @@
 
 export default ngModule => {
-  ngModule.config(addCheckboxType);
+  ngModule.config(addDatePickerType);
 
-  function addCheckboxType(formlyConfigProvider) {
+  function addDatePickerType(formlyConfigProvider) {
     var attributes = [
       'date-disabled',
       'custom-class',

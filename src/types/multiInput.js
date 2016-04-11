@@ -1,7 +1,7 @@
 export default ngModule => {
-  ngModule.config(addCheckboxType);
+  ngModule.config(addMultiInputType);
 
-  function addCheckboxType(formlyConfigProvider) {
+  function addMultiInputType(formlyConfigProvider) {
     formlyConfigProvider.setType({
       name: 'multiInput',
       templateUrl: 'bower_components/angular-formly-templates-koapp/src/types/multiInput.html',
