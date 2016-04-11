@@ -1,5 +1,6 @@
 export default ngModule => {
   require('./checkbox')(ngModule);
+  require('./colorPicker')(ngModule);
   require('./datePicker')(ngModule);
   require('./input')(ngModule);
   require('./multiCheckbox')(ngModule);
