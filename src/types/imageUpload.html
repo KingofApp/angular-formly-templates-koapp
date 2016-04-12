@@ -1,8 +1,17 @@
 <div class="input-group">
   <span class="input-group-btn">
     <span class="btn btn-primary btn-file">Browse
-      <input type="file" ng-model="model[options.key]" name="files" accept="image/*" maxsize="{{to.imageUploadOptions.max-size}}" />
+      <input type="file"
+             ng-model="model[options.key]"
+             accept="image/*"
+             name="files"
+             maxsize="{{to.imageUploadOptions.max-size}}"
+             base-sixty-four-input="base-sixty-four-input"
+             />
+
     </span>
   </span>
-  <input type="text" value="{{model.image.filename}}" readonly="readonly" class="form-control"/>
+  <input type="text" value="{{model[options.key].filename}}" readonly="readonly" class="form-control"/>
 </div>
+
+<!-- base-sixty-four-input="base-sixty-four-input"  -->
