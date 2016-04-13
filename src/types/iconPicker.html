@@ -1,0 +1,5 @@
+<div>
+  <div class="iconPreview" ng-if="isUrl(model[options.key])"><img id="previewIcon" src="{{ model[options.key] }}" /></div>
+  <div class="iconPreview" ng-if="!isUrl(model[options.key])"><iron-icon id="previewIcon" icon="{{ model[options.key] }}"></iron-icon></div>
+  <div id="{{::id}}" class="btn-gold demo" ng-click="changeIconModal()">{{ 'global.change'| translate }}</div>
+</div>

@@ -1,0 +1,44 @@
+<div class="maker big">
+  <header>
+    <p>{{ 'modules.change-icon'| translate }}</p>
+  </header>
+  <section>
+    <div class="form-group ng-scope" ng-if="to.upload">
+      <label for="uploadIcon">{{ "modules.change-icon-upload" | translate }}</label>
+         <input type="file"
+                ng-model="model[options.key]"
+                accept="image/*"
+                name="files"
+                ngf-max-size="3MB"
+                base-sixty-four-input="base-sixty-four-input" />
+    </div>
+    <div class="form-group ng-scope" ng-if="to.url">
+      <label for="iconFromUrl">{{ "modules.change-icon-url" | translate }}</label>
+      <input type="text"
+             ng-change="insertUrl(model[options.key])"
+             ng-model="model[options.key]"
+             value="{{model[options.key]}}" />
+    </div>
+    <div class="form-group ng-scope" ng-if="to.selector">
+      <label for="selectIcon">{{ "modules.change-icon-select" | translate }}</label>
+      <div class="ironIcons">
+        <div ng-repeat="icon in icons">
+          <iron-icon ng-class="{active: (icon == model[options.key])}"
+                     ng-click="selectIcon(icon)"
+                     title="{{ icon }}"
+                     icon="{{ icon }}">
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <button class="btn" id="btnCancel"
+            ng-click="closeThisDialog('Cancel')">
+            <p>{{ 'global.cancel'| translate }}</p>
+    </button>
+    <button class="btn" id="updateIcon"
+            ng-click="updateIcon(model[options.key]); closeThisDialog('Save')">
+            {{ 'global.apply'| translate }}
+    </button>
+  </footer>
+</div>
