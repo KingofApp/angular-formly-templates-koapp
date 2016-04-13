@@ -81,7 +81,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	__webpack_require__(6)(ngModule);
 	__webpack_require__(9)(ngModule);
-	__webpack_require__(25)(ngModule);
+	__webpack_require__(26)(ngModule);
 
 	exports['default'] = ngModuleName;
 	module.exports = exports['default'];
@@ -180,12 +180,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  __webpack_require__(14)(ngModule);
 	  __webpack_require__(15)(ngModule);
 	  __webpack_require__(16)(ngModule);
-	  __webpack_require__(18)(ngModule);
+	  __webpack_require__(17)(ngModule);
 	  __webpack_require__(19)(ngModule);
-	  __webpack_require__(21)(ngModule);
+	  __webpack_require__(20)(ngModule);
 	  __webpack_require__(22)(ngModule);
 	  __webpack_require__(23)(ngModule);
 	  __webpack_require__(24)(ngModule);
+	  __webpack_require__(25)(ngModule);
 	};
 
 	module.exports = exports['default'];
@@ -354,6 +355,78 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 	exports['default'] = function (ngModule) {
+	  ngModule.config(addIconPickerType);
+
+	  function addIconPickerType(formlyConfigProvider) {
+
+	    var ngModelAttrs = {};
+	    var attributes = ['upload', 'url', 'selector'];
+
+	    angular.forEach(attributes, function (attr) {
+	      ngModelAttrs[camelize(attr)] = { attribute: attr };
+	    });
+
+	    formlyConfigProvider.setType({
+	      name: 'iconpicker',
+	      templateUrl: 'bower_components/angular-formly-templates-koapp/src/types/iconPicker.html',
+	      wrapper: ['koappLabel', 'koappHasError'],
+	      defaultOptions: {
+	        ngModelAttrs: ngModelAttrs
+	      },
+	      controller: iconPickerController
+	    });
+
+	    iconPickerController.$inject = ['$scope', 'ngDialog', 'ironIconsService'];
+	    function iconPickerController($scope, ngDialog, ironIconsService) {
+	      $scope.changeIconModal = changeIconModal;
+	      $scope.icons = ironIconsService.get();
+	      $scope.isUrl = isUrl;
+	      $scope.selectIcon = selectIcon;
+
+	      function changeIconModal() {
+	        ngDialog.open({
+	          template: 'bower_components/angular-formly-templates-koapp/src/types/iconPickerModal.html',
+	          scope: $scope,
+	          className: 'ngdialog-theme-plain ngDialogBig'
+	        });
+	      }
+
+	      function isUrl(s) {
+	        var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+	        return regexp.test(s);
+	      }
+
+	      function selectIcon(iconSelected) {
+	        $scope.model[$scope.options.key] = iconSelected;
+	      }
+	    }
+
+	    function camelize(string) {
+	      string = string.replace(/[\-_\s]+(.)?/g, function (match, chr) {
+	        return chr ? chr.toUpperCase() : '';
+	      });
+	      // Ensure 1st char is always lowercase
+	      return string.replace(/^([A-Z])/, function (match, chr) {
+	        return chr ? chr.toLowerCase() : '';
+	      });
+	    }
+	  }
+	  addIconPickerType.$inject = ["formlyConfigProvider"];
+	};
+
+	module.exports = exports['default'];
+
+/***/ },
+/* 15 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, '__esModule', {
+	  value: true
+	});
+
+	exports['default'] = function (ngModule) {
 	  ngModule.config(addImageUploadType);
 
 	  function addImageUploadType(formlyConfigProvider) {
@@ -390,7 +463,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -415,7 +488,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -430,7 +503,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function addCheckboxType(formlyConfigProvider) {
 	    formlyConfigProvider.setType({
 	      name: 'multiCheckbox',
-	      template: __webpack_require__(17),
+	      template: __webpack_require__(18),
 	      wrapper: ['koappLabel', 'koappHasError'],
 	      apiCheck: function apiCheck(check) {
 	        return {
@@ -529,13 +602,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"radio-group\">\n  <div ng-repeat=\"(key, option) in to.options\" class=\"checkbox\">\n    <label>\n      <input type=\"checkbox\"\n             id=\"{{id + '_'+ $index}}\"\n             ng-model=\"multiCheckbox.checked[$index]\"\n             ng-change=\"multiCheckbox.change()\">\n      {{option[to.labelProp || 'name']}}\n    </label>\n  </div>\n</div>\n"
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -575,7 +648,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -590,7 +663,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function addRadioType(formlyConfigProvider) {
 	    formlyConfigProvider.setType({
 	      name: 'radio',
-	      template: __webpack_require__(20),
+	      template: __webpack_require__(21),
 	      wrapper: ['koappLabel', 'koappHasError'],
 	      defaultOptions: {
 	        noFormControl: false
@@ -613,13 +686,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"radio-group\">\n  <div ng-repeat=\"(key, option) in to.options\" ng-class=\"{ 'radio': !to.inline, 'radio-inline': to.inline }\">\n    <label>\n      <input type=\"radio\"\n             id=\"{{id + '_'+ $index}}\"\n             tabindex=\"0\"\n             ng-value=\"option[to.valueProp || 'value']\"\n             ng-model=\"model[options.key]\">\n      {{option[to.labelProp || 'name']}}\n    </label>\n  </div>\n</div>\n"
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -687,7 +760,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -736,7 +809,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -775,7 +848,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -800,7 +873,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -811,11 +884,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _addons = __webpack_require__(26);
+	var _addons = __webpack_require__(27);
 
 	var _addons2 = _interopRequireDefault(_addons);
 
-	var _description = __webpack_require__(28);
+	var _description = __webpack_require__(29);
 
 	var _description2 = _interopRequireDefault(_description);
 
@@ -827,7 +900,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -840,7 +913,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  ngModule.run(addAddonsManipulator);
 
 	  function addAddonsManipulator(formlyConfig, formlyKoappApiCheck) {
-	    var addonTemplate = __webpack_require__(27);
+	    var addonTemplate = __webpack_require__(28);
 	    var addonChecker = formlyKoappApiCheck.shape({
 	      'class': formlyKoappApiCheck.string.optional,
 	      text: formlyKoappApiCheck.string.optional,
@@ -866,13 +939,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports) {
 
 	module.exports = "<div ng-class=\"{'input-group': to.addonLeft || to.addonRight}\">\n    <div class=\"input-group-addon\"\n         ng-if=\"to.addonLeft\"\n         ng-style=\"{cursor: to.addonLeft.onClick ? 'pointer' : 'inherit'}\"\n         ng-click=\"to.addonLeft.onClick(options, this, $event)\">\n        <i class=\"{{to.addonLeft.class}}\" ng-if=\"to.addonLeft.class\"></i>\n        <span ng-if=\"to.addonLeft.text\">{{to.addonLeft.text}}</span>\n    </div>\n    <formly-transclude></formly-transclude>\n    <div class=\"input-group-addon\"\n         ng-if=\"to.addonRight\"\n         ng-style=\"{cursor: to.addonRight.onClick ? 'pointer' : 'inherit'}\"\n         ng-click=\"to.addonRight.onClick(options, this, $event)\">\n        <i class=\"{{to.addonRight.class}}\" ng-if=\"to.addonRight.class\"></i>\n        <span ng-if=\"to.addonRight.text\">{{to.addonRight.text}}</span>\n    </div>\n</div>\n"
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports) {
 
 	'use strict';
