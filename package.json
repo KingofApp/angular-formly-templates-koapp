@@ -19,6 +19,7 @@
     "build:dev": "NODE_ENV=development webpack --config node_modules/kcd-common-tools/shared/webpack.config.js --progress --colors",
     "build:prod": "NODE_ENV=production webpack --config node_modules/kcd-common-tools/shared/webpack.config.js --progress --colors",
     "build": "npm run build:dev; npm run build:prod",
+    "serve": "serve -p 3005 dist",
     "test": "echo 'Still need to set these up...'",
     "watch": "webpack --watch",
     "start": "npm run watch",
@@ -53,6 +54,7 @@
     "publish-latest": "1.1.2",
     "raw-loader": "0.5.1",
     "semantic-release": "4.3.5",
+    "serve": "^1.4.0",
     "validate-commit-msg": "1.0.0",
     "webpack": "^1.12.14"
   },
