@@ -41,7 +41,6 @@
     "commitizen": "1.0.5",
     "cz-conventional-changelog": "1.1.2",
     "deep-extend": "0.4.0",
-    "ghooks": "0.3.2",
     "gulp": "3.9.0",
     "gulp-replace": "0.5.4",
     "jshint": "2.8.0",
