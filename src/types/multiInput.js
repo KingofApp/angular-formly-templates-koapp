@@ -4,7 +4,7 @@ export default ngModule => {
   function addMultiInputType(formlyConfigProvider) {
     formlyConfigProvider.setType({
       name: 'multiInput',
-      templateUrl: 'bower_components/angular-formly-templates-koapp/src/types/multiInput.html',
+      template: require('./multiInput.html'),
       defaultOptions: {
         noFormControl: true,
         wrapper: ['koappLabel', 'koappHasError'],

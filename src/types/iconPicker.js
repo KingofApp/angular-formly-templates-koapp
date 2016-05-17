@@ -17,7 +17,7 @@ export default ngModule => {
 
     formlyConfigProvider.setType({
       name: 'iconpicker',
-      templateUrl:  'bower_components/angular-formly-templates-koapp/src/types/iconPicker.html',
+      template: require('./iconPicker.html'),
       wrapper: ['koappLabel', 'koappHasError'],
       defaultOptions: {
         ngModelAttrs: ngModelAttrs
