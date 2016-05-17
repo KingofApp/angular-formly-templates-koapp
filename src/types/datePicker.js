@@ -46,7 +46,7 @@ export default ngModule => {
 
     formlyConfigProvider.setType({
       name: 'datepicker',
-      templateUrl:  'bower_components/angular-formly-templates-koapp/src/types/datePicker.html',
+      template: require('./datePicker.html'),
       wrapper: ['koappLabel', 'koappHasError'],
       defaultOptions: {
         ngModelAttrs: ngModelAttrs,

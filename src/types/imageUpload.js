@@ -17,7 +17,7 @@ export default ngModule => {
 
     formlyConfigProvider.setType({
       name: 'imageupload',
-      templateUrl:  'bower_components/angular-formly-templates-koapp/src/types/imageUpload.html',
+      template: require('./imageUpload.html'),
       wrapper: ['koappLabel', 'koappHasError'],
       defaultOptions: {
         ngModelAttrs: ngModelAttrs

@@ -5,7 +5,7 @@ export default ngModule => {
     var unique = 1;
     formlyConfigProvider.setType({
       name: 'repeatSection',
-      templateUrl: 'bower_components/angular-formly-templates-koapp/src/types/repeatSection.html',
+      template: require('./repeatSection.html'),
       controller: function($scope) {
         $scope.formOptions = {formState: $scope.formState};
         $scope.addNew = addNew;
