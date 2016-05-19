@@ -3,8 +3,32 @@ div.form-group > div {
     display: -webkit-flex;
     flex-flow: row;
     -webkit-flex-flow: row;
-    margin: 10px 0;
+    margin: 20px 0;
     justify-content: space-between;
+}
+
+div.wysiwyg > div.form-group > div {
+	display: initial;
+}
+
+div.wysiwyg button {
+	font-size: 17px;
+	width: 50px;
+	height: 40px;
+	margin: 0 5px 5px 0;
+	background-color: rgba(255,255,255,.4);
+	border: none;
+}
+
+div.wysiwyg input {
+	min-height: 80px;
+}
+
+div.wysiwyg div#toolbarWC, div#toolbarCC {
+	width: 50%;
+	margin-top: 10px;
+	border-bottom: 1px solid rgba(64,64,64,.3);
+	padding-bottom: 5px;
 }
 
 div.form-group label {
@@ -12,23 +36,123 @@ div.form-group label {
 	-webkit-flex: 1;
 }
 
-div.form-group input, textarea, select, .radio-group {
+div.form-group input, 
+textarea, select, 
+.radio-group, 
+div.input-group, 
+color-picker, 
+div.formly-field-multiInput div.form-group > div > div:last-child, 
+p.AddNewButton button,
+div.form-group div.float {
 	flex: 3;
 	-webkit-flex: 3;
 	outline: 0;
 }
 
+div.radio-group input {
+	appearance: none;
+	 -moz-appearance: none;
+	 -webkit-appearance: none;
+	 border: 1px solid #c8c6c6;
+	 width: 20px;
+	 height: 20px;
+	 border-radius: 0;
+	 margin: 0 5px 0 0;
+	 vertical-align: sub;
+	 border-radius: 50%;
+}
+
+div.radio-group input:checked {
+	background-color: #a79a65;
+	content: '\f046';
+	border: 6px solid #ffffff;
+	box-sizing: border-box;
+}
+
+div.checkbox input[type="checkbox"] {
+	appearance: none;
+	 -moz-appearance: none;
+	 -webkit-appearance: none;
+	 border: 1px solid #c8c6c6;
+	 width: 20px;
+	 height: 20px;
+	 border-radius: 0;
+	 margin: 0 5px 0 0;
+	 vertical-align: sub;
+}
+
+div.form-group div[id^="taTextElement"] {
+	min-height: 80px;
+	border: 1px solid rgba(64,64,64,.3);
+	padding: 0 5px;
+}
+
+div.checkbox input[type="checkbox"]:checked {
+	background-color: #a79a65;
+	content: '\f046';
+	border: 2px solid #ffffff;
+	box-sizing: border-box;
+}
+
+div.checkbox label {
+	vertical-align: middle;
+}
+ 
 .radio-group > div {
 	margin: 0 0 10px;
 }
 
+div.formly-field-input input {
+	height: 25px;
+	padding: 1px 1px 1px 5px;
+	box-sizing: border-box;
+}
+
 div.form-group select {
-	border-radius: 0; 
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    height: 25px;
+	padding: 1px 1px 1px 5px;
+	box-sizing: border-box;
+	border-radius: 0;
+	background: #fff url("http://www.scottgood.com/jsg/blog.nsf/images/arrowdown.gif") 98% 2px no-repeat;
+}
+
+div.form-group p.AddNewButton {
+	width: 100%;
 }
 
 div.form-group textarea {
 	min-height: 80px;
 }
+
+div.repeatsection {
+	background-color: rgba(0,0,0,.2);
+	padding: 25px 10px 0;
+	border-top: 1px solid #f4f4f4;
+}
+
+div.form-group div.input-group > input {
+	display: none;
+}
+
+div.form-group p.input-group {
+	display: inline-block;
+}
+
+div.form-group span.input-group-btn {
+	display: inline-block;
+}
+
+div.form-group button.btnCalen {
+	width: 20px;
+	height: 25px;
+	padding: 3px;
+}
+
+
 
 @media all and (max-width: 480px) {
 
