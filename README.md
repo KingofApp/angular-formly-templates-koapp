@@ -12,8 +12,110 @@ See [angular-formly](http://docs.angular-formly.com) for formly core documentati
 
 NOTE: All of these properties will be under the `templateOptions` property as of angular-formly 3.0.0
 
-### checkbox
+## Fields
+
+### Form Fields
+
+Below is a detailed description of each form fields and its custom properties.
+
+#### Input form field
+>The input uses the `<input>` element and allows you to specify it's type via the type property
+
+[See demo](http://jsbin.com/qiwoxa/edit?html,css,js,output)
+
+_Example text field_
+```javascript
+{
+  "type": "input",
+  "key": "firstName",
+  "templateOptions": {
+    "type": "email", // or url, or text, etc.
+    "placeholder": "jane doe",
+    "label": "First name"
+  }
+}
+```
+
+---
+*********TODO
+#### multiInput form field
+>The multiCheckbox field allows to have a set of checkboxes which will be bind to a provided model value.
+
+[See demo](http://jsbin.com/xirivup/edit?html,css,js,output)
+
+##### options (array, required)
+>`options` is an array of options for the multiCheckbox form field to display. Each option should be an object.
+
+##### labelProp (string, optional)
+>`labelProp` is what is used for what is shown to the user. Defaults to `name`
+
+##### valueProp (string, optional)
+>`valueProp` is what is used for the value assigned to the model. Defaults to `value`
+
+_Example multiCheckbox field_
+```json
+{
+  "key": "roles",
+  "type": "multiCheckbox",
+  "templateOptions": {
+    "label": "Roles",
+    "options": [{"id": 1, "title" : "Administrator"}, {"id": 2, "title" : "User"}],
+    "valueProp": "id",
+    "labelProp": "title"
+  }
+}
+```
+---
+
+---
+#### Textarea form field
+>The textarea field creates multiline input with a textarea element.
+
+[See demo](http://jsbin.com/bumilo/edit?html,css,js,output)
+
+##### lines (number, optional)
+>`lines` sets the rows attribute for the textarea element.
+
+_Example textarea field_
+```json
+{
+  "type": "textarea",
+  "key": "about",
+  "templateOptions": {
+    "placeholder": "I like puppies",
+    "label": "Tell me about yourself",
+    "rows": 4,
+    "cols": 15
+  }
+}
+```
+
+---
+#### Wysiwyg form field
+>The wysiwyg field creates a html editor with a textarea, html viewer and powrfull buttons, returns html format.
+
+[See demo](http://jsbin.com/mufoyu/edit?html,css,js,output)
+
+##### lines (number, optional)
+>`lines` sets the rows attribute for the textarea element.
+
+_Example textarea field_
+```json
+{
+  "key": "wysiwyg",
+  "type": "wysiwyg",
+  "className": "wysiwyg",
+  "templateOptions": {
+    "label": "Wysiwyg"
+  }
+}
+```
+
+---
+#### Checkbox form field
 >The checkbox field allows checkbox input with a input element set to `type='checkbox'`. It doesn't have any custom properties.
+
+[See demo](http://jsbin.com/dekegi/edit?html,css,js,output)
 
 _Example checkbox field_
 ```json
@@ -25,194 +127,282 @@ _Example checkbox field_
   }
 }
 ```
+
 ---
+#### multiCheckbox form field
+>The multiCheckbox field allows to have a set of checkboxes which will be bind to a provided model value.
 
-### colorPicker
->The checkbox field allows checkbox input with a input element set to `type='checkbox'`. It doesn't have any custom properties.
+[See demo](http://jsbin.com/xirivup/edit?html,css,js,output)
 
-_Example checkbox field_
+##### options (array, required)
+>`options` is an array of options for the multiCheckbox form field to display. Each option should be an object.
+
+##### labelProp (string, optional)
+>`labelProp` is what is used for what is shown to the user. Defaults to `name`
+
+##### valueProp (string, optional)
+>`valueProp` is what is used for the value assigned to the model. Defaults to `value`
+
+_Example multiCheckbox field_
 ```json
 {
-  "type": "checkbox",
-  "key": "checkThis",
+  "key": "roles",
+  "type": "multiCheckbox",
   "templateOptions": {
-    "label": "Check this box"
+    "label": "Roles",
+    "options": [{"id": 1, "title" : "Administrator"}, {"id": 2, "title" : "User"}],
+    "valueProp": "id",
+    "labelProp": "title"
   }
 }
 ```
 ---
 
-### datePicker
->The checkbox field allows checkbox input with a input element set to `type='checkbox'`. It doesn't have any custom properties.
+#### Radio form field
+>The radio field allows multiple choice input with a series of linked inputs, with `type='radio'`.
 
-_Example checkbox field_
+[See demo](http://jsbin.com/vayalob/edit?html,css,js,output)
+
+##### options (array, required)
+>`options` is an array of options for the radio form field to display. Each option should be an object with a `name`(string) and `value`(string or number).
+
+_Example radio field_
 ```json
 {
-  "type": "checkbox",
-  "key": "checkThis",
+  "key": "triedEmber",
+  "type": "radio",
   "templateOptions": {
-    "label": "Check this box"
+    "label": "Have you tried EmberJs yet?",
+    "options": [
+      {
+        "name": "Yes, and I love it!",
+        "value": "yesyes"
+      },
+      {
+        "name": "Yes, but I'm not a fan...",
+        "value": "yesno"
+      },
+      {
+        "name": "Nope",
+        "value": "no"
+      }
+    ]
+  }
+}
+```
+
+---
+#### Select form field
+>The select field allows selection via dropdown using the select element.
+
+[See demo](http://jsbin.com/kinaxo/edit?html,css,js,output)
+
+##### options (array, required)
+>`options` is an array of options for the select form field to display. Each option should be an object with a `name`(string). You may optionally add a `group` to some or all of your options.
+
+##### labelProp (string, optional)
+>`labelProp` is what is used for what is shown to the user. Defaults to `name`
+
+##### valueProp (string, optional)
+>`valueProp` is what is used for the value assigned to the model. Defaults to `value`
+
+##### groupProp (string, optional)
+>`groupProp` is what is used to group the options
+
+##### optionsAttr (string, optional)
+>`optionsAttr` is what is used as the attribute ngOptions will be applied to. Defaults to `ng-options`
+
+##### ngOptions (string, optional)
+>If provided, this is used instead of the default `ng-options` giving you full control (and rendering the other options uncessisary.
+
+_Example select field_
+```json
+{
+  "key": "transportation",
+  "type": "select",
+  "templateOptions": {
+    "label": "How do you get around in the city",
+    "valueProp": "name",
+    "options": [
+      {
+        "name": "Car"
+      },
+      {
+        "name": "Helicopter"
+      },
+      {
+        "name": "Sport Utility Vehicle"
+      },
+      {
+        "name": "Bicycle",
+        "group": "low emissions"
+      },
+      {
+        "name": "Skateboard",
+        "group": "low emissions"
+      },
+      {
+        "name": "Walk",
+        "group": "low emissions"
+      },
+      {
+        "name": "Bus",
+        "group": "low emissions"
+      },
+      {
+        "name": "Scooter",
+        "group": "low emissions"
+      },
+      {
+        "name": "Train",
+        "group": "low emissions"
+      },
+      {
+        "name": "Hot Air Baloon",
+        "group": "low emissions"
+      }
+    ]
+  }
+}
+```
+
+---
+#### colorpicker
+>The select field allows to select a color.
+
+[See demo](http://jsbin.com/sikazuz/edit?html,css,js,output)
+
+##### colorPickerFormat (string, optional)
+>`hsl`, `hsv`, `rgb`, `hex`, `hex8`
+
+##### colorPickerAlpha (boolean, optional)
+>`true`, `false`
+
+##### colorPickerSwatch (boolean, optional)
+>`true`, `false`
+
+##### colorPickerPos (string, optional)
+>`bottom left`, `bottom right`, `top left`, `top right`
+
+##### colorPickerSwatchBootstrap (boolean, optional)
+>`true`, `false`
+
+##### colorPickerSwatchPos (string, optional)
+>`left`, `right`
+
+##### colorPickerSwatchOnly (boolean, optional)
+>`true`, `false`
+
+##### colorPickerCase (string, optional)
+>`upper`, `lower`
+
+_Example select field_
+```json
+{
+  "key": "mycolor",
+  "type": "colorpicker",
+  "templateOptions": {
+    "label": "My Color",
+    "colorPickerFormat": "'hex'",
+    "colorPickerAlpha": true,
+    "colorPickerPos": "'top left'",
+    "colorPickerSwatchBootstrap": false
   }
 }
 ```
 ---
 
-### iconPicker
->The checkbox field allows checkbox input with a input element set to `type='checkbox'`. It doesn't have any custom properties.
+#### datepicker
+>The select field a formated date.
 
-_Example checkbox field_
+[See demo](http://jsbin.com/gupakib/edit?html,css,js,output)
+
+_Example select field_
 ```json
 {
-  "type": "checkbox",
-  "key": "checkThis",
+  "type": "datepicker",
+  "key": "day",
   "templateOptions": {
-    "label": "Check this box"
+    "label": "day",
+    "type": "text",
+    "datepickerPopup": "dd-MM-yyyy",
+    "datepickerOptions": {
+      "format": "dd-MM-yyyy"
+    }
   }
 }
 ```
 ---
 
-### imageUpload
->The checkbox field allows checkbox input with a input element set to `type='checkbox'`. It doesn't have any custom properties.
+#### iconpicker
+>The select field allows select an icon via selector, external url or upload file.
 
-_Example checkbox field_
+[See demo](http://jsbin.com/cujegi/edit?html,css,js,output)
+
+_Example select field_
 ```json
 {
-  "type": "checkbox",
-  "key": "checkThis",
+  "key": "iconPicker",
+  "type": "iconpicker",
   "templateOptions": {
-    "label": "Check this box"
+    "label": "Icon Picker"
   }
 }
 ```
 ---
 
-### input
->The checkbox field allows checkbox input with a input element set to `type='checkbox'`. It doesn't have any custom properties.
+*******TODO
+#### imageUpload
+>Allows to upload a image file.
 
-_Example checkbox field_
+[See demo](http://jsbin.com/renopo/edit?html,css,js,output)
+
+##### maxSize (string, optional)
+>Max file size + unit `Ej: 3MB`
+
+##### width (integer, optional)
+>width to resize the image
+
+##### height (integer, optional)
+>height to resize the image
+
+_Example select field_
 ```json
 {
-  "type": "checkbox",
-  "key": "checkThis",
+  "key": "imageupload",
+  "type": "imageupload",
   "templateOptions": {
-    "label": "Check this box"
+    "label": "Image Upload",
+    "maxSize": "3MB"
   }
 }
 ```
 ---
 
-### multiCheckbox
->The checkbox field allows checkbox input with a input element set to `type='checkbox'`. It doesn't have any custom properties.
+******TODO
+#### repeatSection
+>Allows to upload a image file.
 
-_Example checkbox field_
+[See demo](http://jsbin.com/renopo/edit?html,css,js,output)
+
+##### maxSize (string, optional)
+>Max file size + unit `Ej: 3MB`
+
+##### width (integer, optional)
+>width to resize the image
+
+##### height (integer, optional)
+>height to resize the image
+
+_Example select field_
 ```json
 {
-  "type": "checkbox",
-  "key": "checkThis",
+  "key": "imageupload",
+  "type": "imageupload",
   "templateOptions": {
-    "label": "Check this box"
+    "label": "Image Upload",
+    "maxSize": "3MB"
   }
 }
 ```
 ---
-
-### multiInput
->The checkbox field allows checkbox input with a input element set to `type='checkbox'`. It doesn't have any custom properties.
-
-_Example checkbox field_
-```json
-{
-  "type": "checkbox",
-  "key": "checkThis",
-  "templateOptions": {
-    "label": "Check this box"
-  }
-}
-```
----
-
-### radio
->The checkbox field allows checkbox input with a input element set to `type='checkbox'`. It doesn't have any custom properties.
-
-_Example checkbox field_
-```json
-{
-  "type": "checkbox",
-  "key": "checkThis",
-  "templateOptions": {
-    "label": "Check this box"
-  }
-}
-```
----
-
-### repeatSection
->The checkbox field allows checkbox input with a input element set to `type='checkbox'`. It doesn't have any custom properties.
-
-_Example checkbox field_
-```json
-{
-  "type": "checkbox",
-  "key": "checkThis",
-  "templateOptions": {
-    "label": "Check this box"
-  }
-}
-```
----
-
-### select
->The checkbox field allows checkbox input with a input element set to `type='checkbox'`. It doesn't have any custom properties.
-
-_Example checkbox field_
-```json
-{
-  "type": "checkbox",
-  "key": "checkThis",
-  "templateOptions": {
-    "label": "Check this box"
-  }
-}
-```
----
-
-### textArea
->The checkbox field allows checkbox input with a input element set to `type='checkbox'`. It doesn't have any custom properties.
-
-_Example checkbox field_
-```json
-{
-  "type": "checkbox",
-  "key": "checkThis",
-  "templateOptions": {
-    "label": "Check this box"
-  }
-}
-```
----
-
-### wysiwyg
->The checkbox field allows checkbox input with a input element set to `type='checkbox'`. It doesn't have any custom properties.
-
-_Example checkbox field_
-```json
-{
-  "type": "checkbox",
-  "key": "checkThis",
-  "templateOptions": {
-    "label": "Check this box"
-  }
-}
-```
----
-
-
-## Contributing
-
-Please see the [CONTRIBUTING Guidelines](CONTRIBUTING.md).
-
-## Thanks
-
-A special thanks to [Nimbly](http://gonimbly.com) for creating/sponsoring angular-formly's development.
-Thanks to [Kent C. Dodds](https://github.com/kentcdodds) for his continued support on the project.
