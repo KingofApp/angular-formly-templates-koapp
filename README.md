@@ -37,35 +37,24 @@ _Example text field_
 ```
 
 ---
-*********TODO
 #### multiInput form field
->The multiCheckbox field allows to have a set of checkboxes which will be bind to a provided model value.
+>The multiInput field allows to have a set of inputs which will be bind to a provided model value.
 
-[See demo](http://jsbin.com/xirivup/edit?html,css,js,output)
+[See demo](http://jsbin.com/zuqiba/edit?html,css,js,output)
 
-##### options (array, required)
->`options` is an array of options for the multiCheckbox form field to display. Each option should be an object.
-
-##### labelProp (string, optional)
->`labelProp` is what is used for what is shown to the user. Defaults to `name`
-
-##### valueProp (string, optional)
->`valueProp` is what is used for the value assigned to the model. Defaults to `value`
-
-_Example multiCheckbox field_
+_Example multiInput field_
 ```json
 {
-  "key": "roles",
-  "type": "multiCheckbox",
+  "key": "kids",
+  "type": "multiInput",
   "templateOptions": {
-    "label": "Roles",
-    "options": [{"id": 1, "title" : "Administrator"}, {"id": 2, "title" : "User"}],
-    "valueProp": "id",
-    "labelProp": "title"
+    "label": "Kids",
+    "inputOptions": {
+      "type": "input"
+    }
   }
 }
 ```
----
 
 ---
 #### Textarea form field
@@ -349,9 +338,9 @@ _Example select field_
   }
 }
 ```
+
 ---
 
-*******TODO
 #### imageUpload
 >Allows to upload a image file.
 
@@ -377,13 +366,12 @@ _Example select field_
   }
 }
 ```
----
 
-******TODO
+---
 #### repeatSection
 >Allows to upload a image file.
 
-[See demo](http://jsbin.com/renopo/edit?html,css,js,output)
+[See demo](http://jsbin.com/faheja/edit?html,css,js,output)
 
 ##### maxSize (string, optional)
 >Max file size + unit `Ej: 3MB`
@@ -397,11 +385,125 @@ _Example select field_
 _Example select field_
 ```json
 {
-  "key": "imageupload",
-  "type": "imageupload",
+  "type": "repeatSection",
+  "key": "investments",
   "templateOptions": {
-    "label": "Image Upload",
-    "maxSize": "3MB"
+    "btnText": "Add another investment",
+    "fields": [
+      {
+        "className": "row",
+        "fieldGroup": [
+          {
+            "className": "col-xs-4",
+            "type": "input",
+            "key": "investmentName",
+            "templateOptions": {
+              "label": "Name of Investment:",
+              "required": true
+            }
+          },
+          {
+            "type": "input",
+            "key": "investmentDate",
+            "className": "col-xs-4",
+            "templateOptions": {
+              "label": "Date of Investment:",
+              "placeholder": "dd/mm/yyyy such as 20/05/2015",
+              "dateFormat": "DD, d  MM, yy"
+            }
+          },
+          {
+            "type": "input",
+            "key": "stockIdentifier",
+            "className": "col-xs-4",
+            "templateOptions": {
+              "label": "Stock Identifier:"
+            }
+          }
+        ]
+      },
+      {
+        "type": "radio",
+        "key": "type",
+        "templateOptions": {
+          "options": [
+            {
+              "name": "Text Field",
+              "value": "input"
+            },
+            {
+              "name": "TextArea Field",
+              "value": "textarea"
+            },
+            {
+              "name": "Radio Buttons",
+              "value": "radio"
+            },
+            {
+              "name": "Checkbox",
+              "value": "checkbox"
+            }
+          ],
+          "label": "Field Type",
+          "required": true
+        }
+      },
+      {
+        "type": "input",
+        "key": "investmentValue",
+        "templateOptions": {
+          "label": "Value:"
+        },
+        "expressionProperties": {
+          "templateOptions.disabled": "!model.stockIdentifier"
+        }
+      },
+      {
+        "type": "checkbox",
+        "model": "formState",
+        "key": "selfExecuting",
+        "templateOptions": {
+          "label": "Are you executing this trade?"
+        }
+      },
+      {
+        "hideExpression": "!formState.selfExecuting",
+        "fieldGroup": [
+          {
+            "type": "input",
+            "key": "relationshipName",
+            "templateOptions": {
+              "label": "Name:"
+            }
+          },
+          {
+            "type": "select",
+            "key": "complianceApprover",
+            "templateOptions": {
+              "label": "Compliance Approver:",
+              "options": [
+                {
+                  "name": "approver 1",
+                  "value": "some one 1"
+                },
+                {
+                  "name": "approver 2",
+                  "value": "some one 2"
+                }
+              ]
+            }
+          },
+          {
+            "type": "textarea",
+            "key": "requestorComment",
+            "templateOptions": {
+              "label": "Requestor Comment",
+              "rows": 4
+            }
+          }
+        ]
+      }
+    ]
   }
 }
 ```
