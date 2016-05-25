@@ -1,45 +1,8 @@
-# angular-formly: Bootstrap Template
+# Formly templates for King of app
 
-Status:
-[![npm version](https://img.shields.io/npm/v/angular-formly-templates-koapp.svg?style=flat-square)](https://www.npmjs.org/package/angular-formly-templates-koapp)
-[![npm downloads](https://img.shields.io/npm/dm/angular-formly-templates-koapp.svg?style=flat-square)](http://npm-stat.com/charts.html?package=angular-formly-templates-koapp&from=2015-09-01)
-[![Build Status](https://img.shields.io/travis/formly-js/angular-formly-templates-koapp.svg?style=flat-square)](https://travis-ci.org/formly-js/angular-formly-templates-koapp)
-
-This is a template for angular-formly which adds templates with classes specific to bootstrap. Each field is wrapped in a div. This library is not standalone and requires angular-formly to be present and loaded.
+This is a set of templates for angular-formly using in king of app config forms.
 
 ### Demo http://angular-formly.com
-
-## Dependencies
-- Required to use these templates:
- - angular
- - angular-formly
- - api-check
-
-- Dev dependencies to build Formly
- - npm
-
-
-## Install in your project
-- Install [angular-formly](https://github.com/formly-js/angular-formly)
-
-- Install angular-formly: Bootstrap Templates
- `$ bower install angular-formly angular-formly-templates-koapp --save`
-
- or
-
- `$ npm install angular-formly angular-formly-templates-koapp --save`
-
-- Include the javascript file in your index.html, Formly comes in the following flavors:
- `<script src="bower_components/angular-formly/dist/formly.min.js"></script>`
- `<script src="bower_components/angular-formly-templates-koapp/dist/angular-formly-templates-koapp.min.js"></script>`
-
- and
-
- `angular.module('yourModule', ['formly', 'formlyBootstrap']);`
-
- or
-
- `angular.module('yourModule', [require('angular-formly'), require('angular-formly-templates-koapp')]);`
 
 ## Documentation
 
@@ -49,70 +12,16 @@ See [angular-formly](http://docs.angular-formly.com) for formly core documentati
 
 NOTE: All of these properties will be under the `templateOptions` property as of angular-formly 3.0.0
 
----
-##### label (string)
->`label` is used to add an html label to each field.
-
-###### Default
->`undefined`
-
----
-##### labelSrOnly (boolean)
->`labelSrOnly` is used to add the sr-only class to a label so it will hide on non-screen-readers
-
-###### Default
->`undefined`
-
----
-##### required (boolean)
->`required` is used to add the required attribute to a form field.
-
-###### Default
->`undefined`
-
----
-##### disabled (boolean)
->`disabled` is used to add the disabled attribute to a form field.
-
-###### Default
->`undefined`
-
----
-##### placeholder (string)
->`placeholder` is used to add placeholder text to some inputs.
-
-###### Default
->`undefined`
-
----
-##### description (string)
->`description` is used to add descriptive text to all inputs.
-
-###### Default
->`undefined`
-
----
-##### addonLeft (object)
->`addonLeft` is used to add an add-on on the left of a field. The object accepts three properties: `text` that sets a simple text, `onClick` will add a `cursor:pointer` and an ng-click to the addon (invoked with the options and scope), and `class` that sets classes to the add-on.
-
-###### Default
->`undefined`
-
----
-##### addonRight (object)
->`addonRight` is used to add an add-on on the right of a field. The object accepts three properties: `text` that sets a simple text, `onClick` will add a `cursor:pointer` and an ng-click to the addon (invoked with the options and scope), and `class` that sets classes to the add-on.
-
-###### Default
->`undefined`
-
-### Fields
+## Fields
 
 ### Form Fields
 
 Below is a detailed description of each form fields and its custom properties.
 
 #### Input form field
->The input uses the <input> element and allows you to specify it's type via the type property
+>The input uses the `<input>` element and allows you to specify it's type via the type property
+
+[See demo](http://jsbin.com/qiwoxa/edit?html,css,js,output)
 
 _Example text field_
 ```javascript
@@ -128,8 +37,30 @@ _Example text field_
 ```
 
 ---
+#### multiInput form field
+>The multiInput field allows to have a set of inputs which will be bind to a provided model value.
+
+[See demo](http://jsbin.com/zuqiba/edit?html,css,js,output)
+
+_Example multiInput field_
+```json
+{
+  "key": "kids",
+  "type": "multiInput",
+  "templateOptions": {
+    "label": "Kids",
+    "inputOptions": {
+      "type": "input"
+    }
+  }
+}
+```
+
+---
 #### Textarea form field
 >The textarea field creates multiline input with a textarea element.
+
+[See demo](http://jsbin.com/bumilo/edit?html,css,js,output)
 
 ##### lines (number, optional)
 >`lines` sets the rows attribute for the textarea element.
@@ -149,8 +80,31 @@ _Example textarea field_
 ```
 
 ---
+#### Wysiwyg form field
+>The wysiwyg field creates a html editor with a textarea, html viewer and powrfull buttons, returns html format.
+
+[See demo](http://jsbin.com/mufoyu/edit?html,css,js,output)
+
+##### lines (number, optional)
+>`lines` sets the rows attribute for the textarea element.
+
+_Example textarea field_
+```json
+{
+  "key": "wysiwyg",
+  "type": "wysiwyg",
+  "className": "wysiwyg",
+  "templateOptions": {
+    "label": "Wysiwyg"
+  }
+}
+```
+
+---
 #### Checkbox form field
 >The checkbox field allows checkbox input with a input element set to `type='checkbox'`. It doesn't have any custom properties.
+
+[See demo](http://jsbin.com/dekegi/edit?html,css,js,output)
 
 _Example checkbox field_
 ```json
@@ -167,6 +121,8 @@ _Example checkbox field_
 #### multiCheckbox form field
 >The multiCheckbox field allows to have a set of checkboxes which will be bind to a provided model value.
 
+[See demo](http://jsbin.com/xirivup/edit?html,css,js,output)
+
 ##### options (array, required)
 >`options` is an array of options for the multiCheckbox form field to display. Each option should be an object.
 
@@ -177,41 +133,24 @@ _Example checkbox field_
 >`valueProp` is what is used for the value assigned to the model. Defaults to `value`
 
 _Example multiCheckbox field_
-```javascript
+```json
 {
-  key: 'roles',
-  type: 'multiCheckbox',
-  templateOptions: {
-    label: 'Roles',
-    options: [{id: 1, title : "Administrator"}, {id: 2, title : "User"}],
-    valueProp: 'id',
-    labelProp: 'title'
-  }
-}
-```
-
-_Example multiCheckbox field with async options_
-```javascript
-{
-  key: 'roles',
-  type: 'multiCheckbox',
-  templateOptions: {
-    label: 'Roles',
-    options: [],
-    valueProp: 'id',
-    labelProp: 'title'
-  },
-  controller: function($scope, DataService) {
-    DataService.getRoles().then(function(roles){
-      // roles: [{id: 1, title : "Administrator"}, {id: 2, title : "User"}]
-       $scope.to.options = roles;
-    });
+  "key": "roles",
+  "type": "multiCheckbox",
+  "templateOptions": {
+    "label": "Roles",
+    "options": [{"id": 1, "title" : "Administrator"}, {"id": 2, "title" : "User"}],
+    "valueProp": "id",
+    "labelProp": "title"
   }
 }
 ```
 ---
+
 #### Radio form field
 >The radio field allows multiple choice input with a series of linked inputs, with `type='radio'`.
+
+[See demo](http://jsbin.com/vayalob/edit?html,css,js,output)
 
 ##### options (array, required)
 >`options` is an array of options for the radio form field to display. Each option should be an object with a `name`(string) and `value`(string or number).
@@ -245,6 +184,8 @@ _Example radio field_
 #### Select form field
 >The select field allows selection via dropdown using the select element.
 
+[See demo](http://jsbin.com/kinaxo/edit?html,css,js,output)
+
 ##### options (array, required)
 >`options` is an array of options for the select form field to display. Each option should be an object with a `name`(string). You may optionally add a `group` to some or all of your options.
 
@@ -262,8 +203,6 @@ _Example radio field_
 
 ##### ngOptions (string, optional)
 >If provided, this is used instead of the default `ng-options` giving you full control (and rendering the other options uncessisary.
-
-[Example](http://angular-formly.com/#/example/bootstrap-formly/select)
 
 _Example select field_
 ```json
@@ -316,11 +255,256 @@ _Example select field_
 }
 ```
 
-## Contributing
+---
+#### colorpicker
+>The select field allows to select a color.
 
-Please see the [CONTRIBUTING Guidelines](CONTRIBUTING.md).
+[See demo](http://jsbin.com/sikazuz/edit?html,css,js,output)
 
-## Thanks
+##### colorPickerFormat (string, optional)
+>`hsl`, `hsv`, `rgb`, `hex`, `hex8`
 
-A special thanks to [Nimbly](http://gonimbly.com) for creating/sponsoring angular-formly's development.
-Thanks to [Kent C. Dodds](https://github.com/kentcdodds) for his continued support on the project.
+##### colorPickerAlpha (boolean, optional)
+>`true`, `false`
+
+##### colorPickerSwatch (boolean, optional)
+>`true`, `false`
+
+##### colorPickerPos (string, optional)
+>`bottom left`, `bottom right`, `top left`, `top right`
+
+##### colorPickerSwatchBootstrap (boolean, optional)
+>`true`, `false`
+
+##### colorPickerSwatchPos (string, optional)
+>`left`, `right`
+
+##### colorPickerSwatchOnly (boolean, optional)
+>`true`, `false`
+
+##### colorPickerCase (string, optional)
+>`upper`, `lower`
+
+_Example select field_
+```json
+{
+  "key": "mycolor",
+  "type": "colorpicker",
+  "templateOptions": {
+    "label": "My Color",
+    "colorPickerFormat": "'hex'",
+    "colorPickerAlpha": true,
+    "colorPickerPos": "'top left'",
+    "colorPickerSwatchBootstrap": false
+  }
+}
+```
+---
+
+#### datepicker
+>The select field a formated date.
+
+[See demo](http://jsbin.com/gupakib/edit?html,css,js,output)
+
+_Example select field_
+```json
+{
+  "type": "datepicker",
+  "key": "day",
+  "templateOptions": {
+    "label": "day",
+    "type": "text",
+    "datepickerPopup": "dd-MM-yyyy",
+    "datepickerOptions": {
+      "format": "dd-MM-yyyy"
+    }
+  }
+}
+```
+---
+
+#### iconpicker
+>The select field allows select an icon via selector, external url or upload file.
+
+[See demo](http://jsbin.com/cujegi/edit?html,css,js,output)
+
+_Example select field_
+```json
+{
+  "key": "iconPicker",
+  "type": "iconpicker",
+  "templateOptions": {
+    "label": "Icon Picker"
+  }
+}
+```
+
+---
+
+#### imageUpload
+>Allows to upload a image file.
+
+[See demo](http://jsbin.com/renopo/edit?html,css,js,output)
+
+##### maxSize (string, optional)
+>Max file size + unit `Ej: 3MB`
+
+##### width (integer, optional)
+>width to resize the image
+
+##### height (integer, optional)
+>height to resize the image
+
+_Example select field_
+```json
+{
+  "key": "imageupload",
+  "type": "imageupload",
+  "templateOptions": {
+    "label": "Image Upload",
+    "maxSize": "3MB"
+  }
+}
+```
+
+---
+#### repeatSection
+>Allows to upload a image file.
+
+[See demo](http://jsbin.com/faheja/edit?html,css,js,output)
+
+##### maxSize (string, optional)
+>Max file size + unit `Ej: 3MB`
+
+##### width (integer, optional)
+>width to resize the image
+
+##### height (integer, optional)
+>height to resize the image
+
+_Example select field_
+```json
+{
+  "type": "repeatSection",
+  "key": "investments",
+  "templateOptions": {
+    "btnText": "Add another investment",
+    "fields": [
+      {
+        "className": "row",
+        "fieldGroup": [
+          {
+            "className": "col-xs-4",
+            "type": "input",
+            "key": "investmentName",
+            "templateOptions": {
+              "label": "Name of Investment:",
+              "required": true
+            }
+          },
+          {
+            "type": "input",
+            "key": "investmentDate",
+            "className": "col-xs-4",
+            "templateOptions": {
+              "label": "Date of Investment:",
+              "placeholder": "dd/mm/yyyy such as 20/05/2015",
+              "dateFormat": "DD, d  MM, yy"
+            }
+          },
+          {
+            "type": "input",
+            "key": "stockIdentifier",
+            "className": "col-xs-4",
+            "templateOptions": {
+              "label": "Stock Identifier:"
+            }
+          }
+        ]
+      },
+      {
+        "type": "radio",
+        "key": "type",
+        "templateOptions": {
+          "options": [
+            {
+              "name": "Text Field",
+              "value": "input"
+            },
+            {
+              "name": "TextArea Field",
+              "value": "textarea"
+            },
+            {
+              "name": "Radio Buttons",
+              "value": "radio"
+            },
+            {
+              "name": "Checkbox",
+              "value": "checkbox"
+            }
+          ],
+          "label": "Field Type",
+          "required": true
+        }
+      },
+      {
+        "type": "input",
+        "key": "investmentValue",
+        "templateOptions": {
+          "label": "Value:"
+        },
+        "expressionProperties": {
+          "templateOptions.disabled": "!model.stockIdentifier"
+        }
+      },
+      {
+        "type": "checkbox",
+        "model": "formState",
+        "key": "selfExecuting",
+        "templateOptions": {
+          "label": "Are you executing this trade?"
+        }
+      },
+      {
+        "hideExpression": "!formState.selfExecuting",
+        "fieldGroup": [
+          {
+            "type": "input",
+            "key": "relationshipName",
+            "templateOptions": {
+              "label": "Name:"
+            }
+          },
+          {
+            "type": "select",
+            "key": "complianceApprover",
+            "templateOptions": {
+              "label": "Compliance Approver:",
+              "options": [
+                {
+                  "name": "approver 1",
+                  "value": "some one 1"
+                },
+                {
+                  "name": "approver 2",
+                  "value": "some one 2"
+                }
+              ]
+            }
+          },
+          {
+            "type": "textarea",
+            "key": "requestorComment",
+            "templateOptions": {
+              "label": "Requestor Comment",
+              "rows": 4
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+---
