@@ -1,11 +1,10 @@
 {
   "name": "angular-formly-templates-koapp",
   "authors": [
-    "Astrism <astrisms@gmail.com>"
+    "The knight <theknight@kingofapp.es>"
   ],
   "contributors": [
-    "Astrism <astrisms@gmail.com>",
-    "Kent C. Dodds <kent@doddsfamily.us>"
+    "The alchemist <thealchemist@kingofapp.es>"
   ],
   "main": "./dist/angular-formly-templates-koapp.js",
   "description": "Angular-Formly plugin which outputs koa-custom compatible form fields.",
