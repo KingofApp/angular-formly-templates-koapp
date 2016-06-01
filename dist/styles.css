@@ -1,9 +1,11 @@
+div.form-group {    position: relative;		}
+
 div.form-group > div {
 	display: flex;
     display: -webkit-flex;
     flex-flow: row;
     -webkit-flex-flow: row;
-    margin: 20px 0;
+    margin: 30px 0;
     justify-content: space-between;
 }
 
@@ -43,10 +45,21 @@ div.input-group,
 color-picker, 
 div.formly-field-multiInput div.form-group > div > div:last-child, 
 p.AddNewButton button,
-div.form-group div.float {
+div.form-group div.float,
+div#changeIconButton {
 	flex: 3;
 	-webkit-flex: 3;
 	outline: 0;
+	width: 95%;
+	padding-top: 6px;
+}
+
+p.help-block {
+	font-size: 90%;
+	position: absolute;
+	top: 32px;
+	right: 0;
+	color: #efefef;
 }
 
 div.radio-group input {
@@ -62,14 +75,13 @@ div.radio-group input {
 	 border-radius: 50%;
 }
 
-div.radio-group input:checked {
+div.radio-group input:checked:before {
 	background-color: #a79a65;
-	content: '\f046';
 	border: 6px solid #ffffff;
 	box-sizing: border-box;
 }
 
-div.checkbox input[type="checkbox"] {
+div.formly-field-input input[type="checkbox"], div.checkbox input[type="checkbox"] {
 	appearance: none;
 	 -moz-appearance: none;
 	 -webkit-appearance: none;
@@ -79,6 +91,8 @@ div.checkbox input[type="checkbox"] {
 	 border-radius: 0;
 	 margin: 0 5px 0 0;
 	 vertical-align: sub;
+	 flex: none;
+	 transition: .3s ease-in;
 }
 
 div.form-group div[id^="taTextElement"] {
@@ -87,9 +101,11 @@ div.form-group div[id^="taTextElement"] {
 	padding: 0 5px;
 }
 
-div.checkbox input[type="checkbox"]:checked {
+div.formly-field-input input[type="checkbox"]:checked, div.checkbox input[type="checkbox"]:checked {
 	background-color: #a79a65;
-	content: '\f046';
+	background-image: url("http://www.phantasyentertainments.com/site/wp-content/uploads/2015/04/check.white_.png");
+	background-size: contain;
+	transition: .3s ease-in;
 	border: 2px solid #ffffff;
 	box-sizing: border-box;
 }
@@ -103,7 +119,7 @@ div.checkbox label {
 }
 
 div.formly-field-input input {
-	height: 25px;
+	height: 30px;
 	padding: 1px 1px 1px 5px;
 	box-sizing: border-box;
 }
@@ -140,6 +156,12 @@ div.form-group div.input-group > input {
 
 div.form-group p.input-group {
 	display: inline-block;
+	flex: 3;
+	-webkit-flex: 3;
+}
+
+div.form-group p.input-group input {
+	width: 100%;
 }
 
 div.form-group span.input-group-btn {
@@ -147,9 +169,14 @@ div.form-group span.input-group-btn {
 }
 
 div.form-group button.btnCalen {
-	width: 20px;
-	height: 25px;
-	padding: 3px;
+	width: 28px;
+	height: 28px;
+	margin-top: -3px;
+	padding: 0;
+}
+
+button.btnCalen iron-icon {
+	color: #ffffff;
 }
 
 
