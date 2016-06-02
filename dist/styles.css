@@ -45,12 +45,18 @@ div.input-group,
 color-picker, 
 div.formly-field-multiInput div.form-group > div > div:last-child, 
 p.AddNewButton button,
-div.form-group div.float,
-div#changeIconButton {
+div.form-group div.float {
 	flex: 3;
 	-webkit-flex: 3;
 	outline: 0;
 	width: 95%;
+	padding-top: 6px;
+}
+
+div#changeIconButton {
+	flex: 1;
+	-webkit-flex: 1;
+	outline: 0;
 	padding-top: 6px;
 }
 
@@ -113,7 +119,11 @@ div.formly-field-input input[type="checkbox"]:checked, div.checkbox input[type="
 div.checkbox label {
 	vertical-align: middle;
 }
- 
+
+div.checkbox {
+	text-align: right;
+}
+
 .radio-group > div {
 	margin: 0 0 10px;
 }
