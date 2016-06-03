@@ -6,7 +6,7 @@ div.form-group > div {
     flex-flow: row;
     -webkit-flex-flow: row;
     margin: 30px 0;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 div.wysiwyg > div.form-group > div {
@@ -64,7 +64,7 @@ p.help-block {
 	font-size: 90%;
 	position: absolute;
 	top: 32px;
-	right: 0;
+	left: 0;
 	color: #efefef;
 }
 
@@ -104,25 +104,29 @@ div.formly-field-input input[type="checkbox"], div.checkbox input[type="checkbox
 div.form-group div[id^="taTextElement"] {
 	min-height: 80px;
 	border: 1px solid rgba(64,64,64,.3);
-	padding: 0 5px;
+	padding: 8px;
 }
 
 div.formly-field-input input[type="checkbox"]:checked, div.checkbox input[type="checkbox"]:checked {
 	background-color: #a79a65;
 	background-image: url("http://www.phantasyentertainments.com/site/wp-content/uploads/2015/04/check.white_.png");
 	background-size: contain;
+	background-repeat: no-repeat;
 	transition: .3s ease-in;
 	border: 2px solid #ffffff;
 	box-sizing: border-box;
 }
 
 div.checkbox label {
-	vertical-align: middle;
+	flex: 3;
+	-webkit-flex: 3;
+	text-align: left;
+	font-size: 17px;
 }
 
-div.checkbox {
-	text-align: right;
-}
+/*div.checkbox {
+	text-align: left;
+}*/
 
 .radio-group > div {
 	margin: 0 0 10px;
@@ -185,8 +189,29 @@ div.form-group button.btnCalen {
 	padding: 0;
 }
 
+div.form-group div.iconPreview {
+	height: 25px;
+    width: 25px;
+    padding: 8px;
+    background-color: rgba(0,0,0,.2);
+    position: relative;
+    bottom: 6px;
+    right: 10px;
+    border-radius: 5px;
+}
+
 button.btnCalen iron-icon {
 	color: #ffffff;
+}
+
+div.iron-icons {
+	display: inline-block;
+	overflow: scroll;
+    width: 100%;
+    height: 250px;
+    border: 1px solid #efefef;
+    box-sizing: border-box;
+    margin: 0!;
 }
 
 
