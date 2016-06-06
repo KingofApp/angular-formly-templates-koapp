@@ -5,8 +5,12 @@ div.form-group > div, div.repeat {
     display: -webkit-flex;
     flex-flow: row;
     -webkit-flex-flow: row;
-    margin: 15px 0;
+    margin: 20px 0;
     justify-content: flex-start;
+}
+
+div.repeat {
+	margin: 20px 0 0 !important; 
 }
 
 div.wysiwyg > div.form-group > div {
@@ -140,6 +144,12 @@ div.form-group .ironIcons {
     overflow: scroll;
 }
 
+.control-label {
+	display: inline-block;
+	font-family: 'Helvetica-light';
+	line-height: 30px;
+}
+
 /*div.checkbox {
 	text-align: left;
 }*/
@@ -149,9 +159,10 @@ div.form-group .ironIcons {
 }
 
 div.formly-field-input input {
-	height: 30px;
+	height: 25px;
 	padding: 1px 1px 1px 5px;
 	box-sizing: border-box;
+	border: none;
 }
 
 div.form-group select {
