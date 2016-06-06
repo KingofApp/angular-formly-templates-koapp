@@ -1,6 +1,6 @@
 div.form-group {    position: relative;		}
 
-div.form-group > div {
+div.form-group > div, div.repeat {
 	display: flex;
     display: -webkit-flex;
     flex-flow: row;
@@ -33,8 +33,12 @@ div.wysiwyg div#toolbarWC, div#toolbarCC {
 	padding-bottom: 5px;
 }
 
-div.form-group label {
+div.form-group label, div.repeat label {
 	width: 160px;
+}
+
+div.repeat label {
+	line-height: 22px;
 }
 
 div.form-group input, 
@@ -43,7 +47,6 @@ textarea, select,
 div.input-group, 
 color-picker, 
 div.formly-field-multiInput div.form-group > div > div:last-child, 
-p.AddNewButton button,
 div.form-group div.float {
 	flex: 3;
 	-webkit-flex: 3;
@@ -54,13 +57,14 @@ div.form-group div.float {
 
 div#changeIconButton {
 	outline: 0;
-	padding-top: 6px;
-	width: 140px;
-	height: 36px;
-	line-height: 39px;
-	background-color: rgba(0,0,0,0.4);
-	border-radius: 0 5px 5px 0;
-	font: 15px "Helvetica-bold";
+    padding-top: 9px;
+    box-sizing: border-box;
+    width: 140px;
+    height: 30px;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 0 5px 5px 0;
+    font: 14px "Helvetica-bold";
+    text-align: center;
 }
 
 p.help-block {
@@ -177,22 +181,30 @@ div.repeatsection {
     margin-bottom: 10px;
 }
 
-div.repeatsection .btn_rem {
+.btn_rem {
 	background-color: tomato;
-	display: block;
-	margin: 0 auto;
-	width: 120px;
-	height: 20px;
+    display: block;
+    margin: 0 auto;
+    width: 120px;
+    height: 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-family: 'Helvetica-regu';
 }
 
-div.repeatsection .btn_add {
+.btn_add {
 	background-color: #a79a64;
+	color: #ffffff;
 	display: block;
 	width: 230px;
-	line-height: 18px;
+	line-height: 19px;
 	height: 20px;
-	position: relative;
-	left: 180px;
+	border: none;
+	border-radius: 5px;	
+	cursor: pointer;
+	font-family: 'Helvetica-bold';
+	margin-bottom: 10px;
 }
 
 div.form-group div.input-group > input {
@@ -221,18 +233,21 @@ div.form-group button.btnCalen {
 }
 
 div.form-group div.iconPreview {
-	height: 20px;
-	width: 20px;
-	padding: 8px;
-	background-color: rgba(0,0,0,.2);
-	position: relative;
-	bottom: 0;
-	right: 1px;
-	border-radius: 5px 0 0 5px;
+	height: 30px;
+    width: 30px;
+    padding: 6px;
+    background-color: rgba(0,0,0,.2);
+    position: relative;
+    bottom: 0px;
+    right: 1px;
+    border-radius: 5px 0 0 5px;
+    box-sizing: border-box;
 }
 
 button.btnCalen iron-icon {
 	color: #ffffff;
+	width: 20px !important;
+	height: 20px !important;
 }
 
 
