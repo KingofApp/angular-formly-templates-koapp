@@ -1,4 +1,4 @@
-//! angular-formly-templates-koapp version 1.0.8 built with ♥ by KingofApp <theking@kingofapp.com> (ó ì_í)=óò=(ì_í ò)
+//! angular-formly-templates-koapp version 1.0.9 built with ♥ by KingofApp <theking@kingofapp.com> (ó ì_í)=óò=(ì_í ò)
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -77,7 +77,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    prefix: 'angular-formly-koapp'
 	  }
 	}));
-	ngModule.constant('formlyKoappVersion', ("1.0.8"));
+	ngModule.constant('formlyKoappVersion', ("1.0.9"));
 
 	__webpack_require__(6)(ngModule);
 	__webpack_require__(9)(ngModule);
@@ -787,7 +787,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 27 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\n\t<!--loop through each element in model array-->\n\t<div class=\"{{hideRepeat}}\">\n    <div class=\"repeatsection\" ng-repeat=\"element in model[options.key]\" ng-init=\"fields = copyFields(to.fields)\">\n      <formly-form fields=\"fields\"\n                   model=\"element\"\n                   form=\"form\">\n      </formly-form>\n      <div style=\"margin-bottom:20px;\">\n        <button type=\"button\" class=\"btn btn-sm btn-danger\" ng-click=\"model[options.key].splice($index, 1)\">\n          Remove\n        </button>\n      </div>\n      <hr>\n  </div>\n  <p class=\"AddNewButton\">\n    <button type=\"button\" class=\"btn btn-primary\" ng-click=\"addNew()\" >{{to.btnText}}</button>\n  </p>\n</div>\n"
+	module.exports = "<div>\n\t<!--loop through each element in model array-->\n\t<div class=\"{{hideRepeat}}\">\n    <div class=\"repeatsection\" ng-repeat=\"element in model[options.key]\" ng-init=\"fields = copyFields(to.fields)\">\n      <formly-form fields=\"fields\"\n                   model=\"element\"\n                   form=\"form\">\n      </formly-form>\n      <div>\n        <button type=\"button\" class=\"btn_rem btn-sm btn-danger\" ng-click=\"model[options.key].splice($index, 1)\">\n          Remove\n        </button>\n      </div>\n  </div>\n  <p class=\"AddNewButton\">\n    <button type=\"button\" class=\"btn_add btn-primary\" ng-click=\"addNew()\" >{{to.btnText}}</button>\n  </p>\n</div>\n"
 
 /***/ },
 /* 28 */
