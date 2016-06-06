@@ -1,18 +1,21 @@
 <div>
 	<!--loop through each element in model array-->
 	<div class="{{hideRepeat}}">
+    <div class="repeat">
+      <label for="">Hola que</label>
+      <p class="AddNewButton">
+        <button type="button" class="btn_add btn-primary" ng-click="addNew()" >{{to.btnText}}</button>
+      </p>
+    </div>
     <div class="repeatsection" ng-repeat="element in model[options.key]" ng-init="fields = copyFields(to.fields)">
       <formly-form fields="fields"
                    model="element"
                    form="form">
       </formly-form>
       <div>
-        <button type="button" class="btn_rem btn-sm btn-danger" ng-click="model[options.key].splice($index, 1)">
+        <button type="button" class="btn_rem btn-danger" ng-click="model[options.key].splice($index, 1)">
           Remove
         </button>
       </div>
   </div>
-  <p class="AddNewButton">
-    <button type="button" class="btn_add btn-primary" ng-click="addNew()" >{{to.btnText}}</button>
-  </p>
 </div>
