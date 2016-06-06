@@ -2,7 +2,7 @@
 	<!--loop through each element in model array-->
 	<div class="{{hideRepeat}}">
     <div class="repeat">
-      <label for="">Hola que</label>
+      <label for="">{{option[to.labelProp || 'name']}}</label>
       <p class="AddNewButton">
         <button type="button" class="btn_add btn-primary" ng-click="addNew()" >{{to.btnText}}</button>
       </p>
