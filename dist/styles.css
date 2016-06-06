@@ -5,7 +5,7 @@ div.form-group > div, div.repeat {
     display: -webkit-flex;
     flex-flow: row;
     -webkit-flex-flow: row;
-    margin: 20px 0;
+    margin: 15px 0;
     justify-content: flex-start;
 }
 
@@ -242,6 +242,11 @@ div.form-group div.iconPreview {
     right: 1px;
     border-radius: 5px 0 0 5px;
     box-sizing: border-box;
+}
+
+div.iconPreview #previewIcon {
+	width: 19px !important;
+	height: 19px !important;
 }
 
 button.btnCalen iron-icon {
