@@ -13,6 +13,10 @@ div.repeat {
 	margin: 20px 0 0 !important; 
 }
 
+div.big div.form-group {
+	margin: 10px 0;
+}
+
 div.wysiwyg > div.form-group > div {
 	display: initial;
 }
@@ -24,6 +28,18 @@ div.wysiwyg button {
 	margin: 0 5px 5px 0;
 	background-color: rgba(255,255,255,.4);
 	border: none;
+}
+
+.ta-toolbar {
+    display: inline-block;
+    width: 100%;
+    float: none;
+}
+
+.ta-editor {
+    display: inline-block;
+    width: 100%;
+    float: none;
 }
 
 div.wysiwyg input {
@@ -39,6 +55,10 @@ div.wysiwyg div#toolbarWC, div#toolbarCC {
 
 div.form-group label, div.repeat label {
 	width: 160px;
+}
+
+div.form-group input#iconUploadImage {
+	border: none;
 }
 
 div.repeat label {
@@ -69,6 +89,7 @@ div#changeIconButton {
     border-radius: 0 5px 5px 0;
     font: 14px "Helvetica-bold";
     text-align: center;
+    cursor: pointer;
 }
 
 p.help-block {
@@ -204,11 +225,11 @@ div.repeatsection {
     font-family: 'Helvetica-regu';
 }
 
-.btn_add {
+.btn_add, .btn-add {
 	background-color: #a79a64;
 	color: #ffffff;
 	display: block;
-	width: 230px;
+	width: 230px !important;
 	line-height: 19px;
 	height: 20px;
 	border: none;
@@ -266,6 +287,14 @@ button.btnCalen iron-icon {
 	height: 20px !important;
 }
 
+.ta-root p.help-block {
+	left: 0;
+}
+
+.ta-root {
+	flex: 3;
+	-webkit-flex: 3;
+}
 
 @media all and (max-width: 480px) {
 
