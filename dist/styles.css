@@ -42,6 +42,16 @@ div.wysiwyg button {
     float: none;
 }
 
+.ta-editor img {
+    width: 100%;
+}
+
+.ta-resizer-handle-overlay {
+	width: 0 !important;
+	height: 0 !important;
+	color: transparent;
+}
+
 div.wysiwyg input {
 	min-height: 80px;
 }
@@ -204,6 +214,7 @@ div.form-group p.AddNewButton {
 
 div.form-group textarea {
 	min-height: 80px;
+	resize: none;
 }
 
 div.repeatsection {
@@ -294,6 +305,24 @@ button.btnCalen iron-icon {
 .ta-root {
 	flex: 3;
 	-webkit-flex: 3;
+}
+
+.ta-root div.popover {
+	bottom: 0 !important;
+    left: 30% !important;
+    height: 40px !important;
+    position: fixed;
+    display: block !important;
+    width: 50% !important;
+}
+
+.ta-root div.popover .btn-default {
+	width: 50px !important;
+	height: 40px !important;
+}
+
+.ta-root .fa {
+	padding-top: 6px;
 }
 
 @media all and (max-width: 480px) {
