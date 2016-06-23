@@ -308,15 +308,16 @@ button.btnCalen iron-icon {
 }
 
 .ta-root div.popover {
-	bottom: 0 !important;
-    left: 30% !important;
-    height: 40px !important;
+    bottom: 0px !important;
+    left: 299px !important;
+    height: 324px;
     position: fixed;
     display: block !important;
-    width: 50% !important;
+    width: 50px !important;
 }
 
 .ta-root div.popover .btn-default {
+	font-size: 14px !important;
 	width: 50px !important;
 	height: 40px !important;
 }
