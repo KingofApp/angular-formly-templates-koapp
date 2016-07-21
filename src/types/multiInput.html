@@ -12,11 +12,11 @@
                      index="$index">
        </formly-field>
        <div class="col-xs-2" style="margin-top:6px">
-        <a ng-click="model[options.key].splice($index, 1)">x Remove</a>
+        <a ng-click="model[options.key].splice($index, 1)">x {{ 'global.remove'| translate }}</a>
       </div>
     </div>
   </div>
   <div>
-    <button type="button" class="btn-add btn btn-success btn-sm" ng-click="model[options.key].push('')">Add</button>
+    <button type="button" class="btn-add btn btn-success btn-sm" ng-click="model[options.key].push('')">{{ 'global.add'| translate }}</button>
   </div>
 </div>

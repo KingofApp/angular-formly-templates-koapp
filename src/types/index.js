@@ -2,6 +2,7 @@ export default ngModule => {
   require('./checkbox')(ngModule);
   require('./colorPicker')(ngModule);
   require('./datePicker')(ngModule);
+  require('./frame')(ngModule);
   require('./iconPicker')(ngModule);
   require('./imageUpload')(ngModule);
   require('./input')(ngModule);
