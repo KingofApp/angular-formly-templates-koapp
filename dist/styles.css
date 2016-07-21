@@ -10,7 +10,7 @@ div.form-group > div, div.repeat {
 }
 
 div.repeat {
-	margin: 20px 0 0 !important; 
+	margin: 20px 0 0 !important;
 }
 
 div.big div.form-group {
@@ -75,12 +75,12 @@ div.repeat label {
 	line-height: 22px;
 }
 
-div.form-group input, 
-textarea, select, 
-.radio-group, 
-div.input-group, 
-color-picker, 
-div.formly-field-multiInput div.form-group > div > div:last-child, 
+div.form-group input,
+textarea, select,
+.radio-group,
+div.input-group,
+color-picker,
+div.formly-field-multiInput div.form-group > div > div:last-child,
 div.form-group div.float {
 	flex: 3;
 	-webkit-flex: 3;
@@ -244,7 +244,7 @@ div.repeatsection {
 	line-height: 19px;
 	height: 20px;
 	border: none;
-	border-radius: 5px;	
+	border-radius: 5px;
 	cursor: pointer;
 	font-family: 'Helvetica-bold';
 	margin-bottom: 10px;
@@ -334,10 +334,22 @@ button.btnCalen iron-icon {
 		    -webkit-flex-flow: column;
 		    justify-content: center;
 	}
-	
+
 	div.form-group label {
 		margin-bottom: 8px;
 	}
 
+}
 
+.btn-frame {
+	outline: 0;
+	padding-top: 9px;
+	box-sizing: border-box;
+	width: 140px;
+	height: 30px;
+	background-color: rgba(0,0,0,0.4);
+	border-radius: 5px;
+	font: 14px "Helvetica-bold";
+	text-align: center;
+	cursor: pointer;
 }
