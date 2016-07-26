@@ -1,4 +1,4 @@
-//! angular-formly-templates-koapp version 1.0.18 built with ♥ by KingofApp <theking@kingofapp.com> (ó ì_í)=óò=(ì_í ò)
+//! angular-formly-templates-koapp version 1.0.19 built with ♥ by KingofApp <theking@kingofapp.com> (ó ì_í)=óò=(ì_í ò)
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -77,7 +77,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    prefix: 'angular-formly-koapp'
 	  }
 	}));
-	ngModule.constant('formlyKoappVersion', ("1.0.18"));
+	ngModule.constant('formlyKoappVersion', ("1.0.19"));
 
 	__webpack_require__(6)(ngModule);
 	__webpack_require__(9)(ngModule);
