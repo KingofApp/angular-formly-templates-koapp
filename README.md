@@ -62,8 +62,11 @@ _Example multiInput field_
 
 [See demo](http://jsbin.com/bumilo/edit?html,css,js,output)
 
-##### lines (number, optional)
->`lines` sets the rows attribute for the textarea element.
+##### rows (number, optional)
+>`rows` sets the rows attribute for the textarea element.
+
+##### cols (number, optional)
+>`cols` sets the cols attribute for the textarea element.
 
 _Example textarea field_
 ```json
@@ -85,10 +88,7 @@ _Example textarea field_
 
 [See demo](http://jsbin.com/mufoyu/edit?html,css,js,output)
 
-##### lines (number, optional)
->`lines` sets the rows attribute for the textarea element.
-
-_Example textarea field_
+_Example wysiwyg field_
 ```json
 {
   "key": "wysiwyg",
@@ -96,6 +96,39 @@ _Example textarea field_
   "className": "wysiwyg",
   "templateOptions": {
     "label": "Wysiwyg"
+  }
+}
+```
+
+---
+#### Frame form field
+>The frame field is a button that opens a modal with custom view to make it easy for the user to get the module's configuration data.
+
+##### url (string)
+>`url` sets the configuration view to see in iframe.
+
+##### buttonText (string)
+>`buttonText` sets button text.
+
+##### width (number, optional)
+>`width` sets iframe width.
+
+##### height (number, optional)
+>`height` sets iframe height.
+
+
+
+_Example frame field_
+```json
+{
+  "type": "frame",
+  "templateOptions": {
+    "label": "Easy configuration",
+    "description": "Click here to configure module",
+    "url": "/modules/moduleName/widget/configure.html",
+    "buttonText": "Configure",
+    "width": 450,
+    "height": 700
   }
 }
 ```
