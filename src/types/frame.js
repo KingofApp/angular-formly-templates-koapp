@@ -27,10 +27,18 @@ export default ngModule => {
       controller: frameController
     });
 
-    frameController.$inject = ['$scope', 'ngDialog'];
-    function frameController($scope, ngDialog){
+    frameController.$inject = ['$scope', 'ngDialog', 'widgetDataService'];
+    function frameController($scope, ngDialog, widgetDataService){
       $scope.openFrameModal  = openFrameModal;
-      $scope.ngModelAttrs = ngModelAttrs;
+      $scope.ngModelAttrs    = ngModelAttrs;
+
+      $scope.iframe = {
+        src   : widgetDataService.getPluginData($scope.to.fullApp, $scope.to.uniqueId, 'src'),
+        data  : widgetDataService.getData($scope.to.fullApp, $scope.to.uniqueId),
+        close : function(){
+          console.log("close signal");
+        }
+      }
 
       function openFrameModal() {
         ngDialog.open({
