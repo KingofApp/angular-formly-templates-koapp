@@ -44,7 +44,7 @@ export default ngModule => {
         ngDialog.open({
             template: 'bower_components/angular-formly-templates-koapp/src/types/frameModal.html',
             scope: $scope,
-            className: 'ngdialog-theme-plain ngDialogBig'
+            className: 'ngdialog-theme-plain ngDialogBig custom-size'
         });
       }
 

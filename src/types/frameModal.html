@@ -1,3 +1,5 @@
 <div class="maker big">
+  <style ng-if="to.width">.custom-size .ngdialog-content { width: {{to.width}} px !important; }</style>
+  <style ng-if="to.height">.custom-size .ngdialog-content { height: {{to.height}} px !important; }</style>
   <koapp-widget src="iframe.src" data="iframe.data" on-close="iframe.close()"></koapp-widget>
 </div>
