@@ -393,7 +393,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          src: $scope.to.url || widgetDataService.getPluginData($scope.to.fullApp, $scope.to.uniqueId, 'src'),
 	          data: widgetDataService.getData($scope.to.fullApp, $scope.to.uniqueId)
 	        };
-	        console.log("[I] Data ", $scope.iframe.data);
+	        console.log("[I] iframeData ", $scope.iframe);
 	        ngDialog.open({
 	          template: 'bower_components/angular-formly-templates-koapp/src/types/frameModal.html',
 	          scope: $scope,
