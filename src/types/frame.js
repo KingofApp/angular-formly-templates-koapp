@@ -32,15 +32,12 @@ export default ngModule => {
       $scope.openFrameModal  = openFrameModal;
       $scope.ngModelAttrs    = ngModelAttrs;
 
-      $scope.iframe = {
-        src   : widgetDataService.getPluginData($scope.to.fullApp, $scope.to.uniqueId, 'src'),
-        data  : widgetDataService.getData($scope.to.fullApp, $scope.to.uniqueId),
-        close : function(){
-          console.log("close signal");
-        }
-      }
 
       function openFrameModal() {
+        $scope.iframe = {
+          src   : widgetDataService.getPluginData($scope.to.fullApp, $scope.to.uniqueId, 'src'),
+          data  : widgetDataService.getData($scope.to.fullApp, $scope.to.uniqueId)
+        }
         ngDialog.open({
             template: 'bower_components/angular-formly-templates-koapp/src/types/frameModal.html',
             scope: $scope,
