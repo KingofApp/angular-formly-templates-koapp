@@ -35,7 +35,7 @@ export default ngModule => {
 
       function openFrameModal() {
         $scope.iframe = {
-          src   : widgetDataService.getPluginData($scope.to.fullApp, $scope.to.uniqueId, 'src'),
+          src   : $scope.to.url || widgetDataService.getPluginData($scope.to.fullApp, $scope.to.uniqueId, 'src'),
           data  : widgetDataService.getData($scope.to.fullApp, $scope.to.uniqueId)
         }
         console.log("[I] Data ", $scope.iframe.data);
