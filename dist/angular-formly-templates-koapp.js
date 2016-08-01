@@ -383,10 +383,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	      controller: frameController
 	    });
 
-	    frameController.$inject = ['$scope', 'ngDialog', 'widgetDataService'];
-	    function frameController($scope, ngDialog, widgetDataService) {
+	    frameController.$inject = ['$scope', '$rootScope', 'ngDialog', 'widgetDataService'];
+	    function frameController($scope, $rootScope, ngDialog, widgetDataService) {
 	      $scope.openFrameModal = openFrameModal;
 	      $scope.ngModelAttrs = ngModelAttrs;
+
+	      $scope.$watch('iframe.data.plugin.scope', function () {
+	        if ($scope.iframe) $rootScope.iframeChange(angular.copy($scope.iframe.data.plugin));
+	      });
 
 	      function openFrameModal() {
 	        $scope.iframe = {
