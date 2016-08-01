@@ -1,4 +1,4 @@
-//! angular-formly-templates-koapp version 1.0.23 built with ♥ by KingofApp <theking@kingofapp.com> (ó ì_í)=óò=(ì_í ò)
+//! angular-formly-templates-koapp version 1.0.24 built with ♥ by KingofApp <theking@kingofapp.com> (ó ì_í)=óò=(ì_í ò)
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -77,7 +77,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    prefix: 'angular-formly-koapp'
 	  }
 	}));
-	ngModule.constant('formlyKoappVersion', ("1.0.23"));
+	ngModule.constant('formlyKoappVersion', ("1.0.24"));
 
 	__webpack_require__(6)(ngModule);
 	__webpack_require__(9)(ngModule);
@@ -383,10 +383,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	      controller: frameController
 	    });
 
-	    frameController.$inject = ['$scope', 'ngDialog', 'widgetDataService'];
-	    function frameController($scope, ngDialog, widgetDataService) {
+	    frameController.$inject = ['$scope', '$rootScope', 'ngDialog', 'widgetDataService'];
+	    function frameController($scope, $rootScope, ngDialog, widgetDataService) {
 	      $scope.openFrameModal = openFrameModal;
 	      $scope.ngModelAttrs = ngModelAttrs;
+
+	      $scope.$watch('iframe.data.plugin.scope', function () {
+	        if ($scope.iframe) $rootScope.iframeChange(angular.copy($scope.iframe.data.plugin));
+	      });
 
 	      function openFrameModal() {
 	        $scope.iframe = {
