@@ -389,13 +389,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	      $scope.ngModelAttrs = ngModelAttrs;
 
 	      $scope.$watch('iframe.data.plugin.scope', function () {
-	        if ($scope.iframe) $rootScope.iframeChange(angular.copy($scope.iframe.data.plugin));
+	        if ($scope.iframe && $scope.iframe.data) $rootScope.iframeChange($scope.iframe.data.plugin);
 	      });
 
 	      function openFrameModal() {
 	        $scope.iframe = {
 	          src: $scope.to.url || widgetDataService.getPluginData($scope.to.fullApp, $scope.to.uniqueId, 'src'),
-	          data: widgetDataService.getData($scope.to.fullApp, $scope.to.uniqueId)
+	          data: widgetDataService.getData($scope.to.fullApp, $scope.to.uniqueId),
+	          close: ngDialog.close
 	        };
 	        console.log("[I] iframeData ", $scope.iframe);
 	        ngDialog.open({
