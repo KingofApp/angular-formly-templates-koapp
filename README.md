@@ -292,7 +292,7 @@ _Example select field_
 #### colorpicker
 >The select field allows to select a color.
 
-[See demo](http://jsbin.com/sikazuz/edit?html,css,js,output)
+[See demo](http://jsbin.com/faqidufota/edit?html,css,js,output)
 
 ##### colorPickerFormat (string, optional)
 >`hsl`, `hsv`, `rgb`, `hex`, `hex8`
