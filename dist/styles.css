@@ -89,20 +89,25 @@ div.form-group div.float {
 	padding-top: 6px;
 }
 
+.color-picker-wrapper .input-group {
+	width: 100% !important;
+	padding-top: 0 !important;
+}
+
 .color-picker-input-wrapper {
-	padding-top: 0;
-	width: 100%;
+	padding-top: 0 !important;
+	width: 100% !important;
 }
 
 color-picker.ng-pristine {
-	padding-top: 0;
-	overflow: hidden;
+	padding-top: 0 !important;
+	overflow: hidden !important;
 }
 
 .color-picker-input-swatch {
 	padding-left: 0 !important;
 	width: 100% !important;
-	height: 20px;
+	height: 15px !important;
 }
 
 div#changeIconButton {
@@ -121,7 +126,7 @@ div#changeIconButton {
 p.help-block {
 	font-size: 90%;
 	position: absolute;
-	top: 34px;
+	top: 30px;
 	left: 160px;
 	color: #efefef;
 }
@@ -353,7 +358,6 @@ button.btnCalen iron-icon {
 
 	div.form-group label {
 		margin-bottom: 8px;
-		line-height: 38px;
 	}
 
 }
