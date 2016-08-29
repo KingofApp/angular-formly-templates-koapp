@@ -89,6 +89,20 @@ div.form-group div.float {
 	padding-top: 6px;
 }
 
+.color-picker-input-wrapper {
+	padding-top: 0;
+	width: 100%;
+}
+
+color-picker.ng-pristine {
+	padding-top: 0;
+	overflow: hidden;
+}
+
+.color-picker-input-swatch {
+	padding-left: 0 !important;
+}
+
 div#changeIconButton {
 	outline: 0;
     padding-top: 9px;
