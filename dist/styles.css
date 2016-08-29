@@ -101,6 +101,8 @@ color-picker.ng-pristine {
 
 .color-picker-input-swatch {
 	padding-left: 0 !important;
+	width: 100% !important;
+	height: 20px;
 }
 
 div#changeIconButton {
@@ -351,6 +353,7 @@ button.btnCalen iron-icon {
 
 	div.form-group label {
 		margin-bottom: 8px;
+		line-height: 38px;
 	}
 
 }
