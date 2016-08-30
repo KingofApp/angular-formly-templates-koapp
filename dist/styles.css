@@ -101,12 +101,11 @@ div.form-group div.float {
 
 color-picker.ng-pristine {
 	padding-top: 0 !important;
-	overflow: hidden !important;
 }
 
 .color-picker-input-swatch {
 	padding-left: 0 !important;
-	width: 100% !important;
+	width: 99.3% !important;
 	height: 15px !important;
 }
 
