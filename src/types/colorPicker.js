@@ -32,7 +32,7 @@ export default ngModule => {
 
     formlyConfigProvider.setType({
       name: 'colorpicker',
-      template: '<color-picker ng-model="model[options.key]"></color-picker>',
+      template: '<color-picker class="cpStyles" ng-model="model[options.key]"></color-picker>',
       wrapper: ['koappLabel', 'koappHasError'],
       defaultOptions: {
         ngModelAttrs: ngModelAttrs
