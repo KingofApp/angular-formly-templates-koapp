@@ -1,4 +1,4 @@
-//! angular-formly-templates-koapp version 1.0.31 built with ♥ by KingofApp <theking@kingofapp.com> (ó ì_í)=óò=(ì_í ò)
+//! angular-formly-templates-koapp version 1.0.32 built with ♥ by KingofApp <theking@kingofapp.com> (ó ì_í)=óò=(ì_í ò)
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -77,7 +77,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    prefix: 'angular-formly-koapp'
 	  }
 	}));
-	ngModule.constant('formlyKoappVersion', ("1.0.31"));
+	ngModule.constant('formlyKoappVersion', ("1.0.32"));
 
 	__webpack_require__(6)(ngModule);
 	__webpack_require__(9)(ngModule);
@@ -155,13 +155,13 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 7 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\r\n  <label for=\"{{id}}\" class=\"control-label {{to.labelSrOnly ? 'sr-only' : ''}}\" ng-if=\"to.label\">\r\n    {{to.label}}\r\n    {{to.required ? '*' : ''}}\r\n  </label>\r\n  <formly-transclude></formly-transclude>\r\n</div>\r\n"
+	module.exports = "<div>\n  <label for=\"{{id}}\" class=\"control-label {{to.labelSrOnly ? 'sr-only' : ''}}\" ng-if=\"to.label\">\n    {{to.label}}\n    {{to.required ? '*' : ''}}\n  </label>\n  <formly-transclude></formly-transclude>\n</div>\n"
 
 /***/ },
 /* 8 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"form-group\" ng-class=\"{'has-error': showError}\">\r\n  <formly-transclude></formly-transclude>\r\n</div>\r\n"
+	module.exports = "<div class=\"form-group\" ng-class=\"{'has-error': showError}\">\n  <formly-transclude></formly-transclude>\n</div>\n"
 
 /***/ },
 /* 9 */
@@ -228,7 +228,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 11 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"checkbox\">\r\n\t<label>\r\n\t\t{{to.label}}\r\n\t\t{{to.required ? '*' : ''}}\r\n\t</label>\r\n\t<input type=\"checkbox\"\r\n\tclass=\"formly-field-checkbox\"\r\n\tng-model=\"model[options.key]\">\r\n</div>\r\n"
+	module.exports = "<div class=\"checkbox\">\n\t<label>\n\t\t{{to.label}}\n\t\t{{to.required ? '*' : ''}}\n\t</label>\n\t<input type=\"checkbox\"\n\tclass=\"formly-field-checkbox\"\n\tng-model=\"model[options.key]\">\n</div>\n"
 
 /***/ },
 /* 12 */
@@ -349,7 +349,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 14 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"float\">\r\n  <div class=\"flex\">\r\n    <p class=\"input-group\">\r\n      <input  type=\"text\"\r\n              id=\"{{::id}}\"\r\n              name=\"{{::id}}\"\r\n              ng-model=\"model[options.key]\"\r\n              class=\"form-control\"\r\n              ng-click=\"datepicker.open($event)\"\r\n              uib-datepicker-popup=\"{{to.datepickerOptions.format}}\"\r\n              is-open=\"datepicker.opened\"\r\n              datepicker-options=\"to.datepickerOptions\" />\r\n    </p>\r\n    <span class=\"input-group-btn\">\r\n      <button class=\"btnCalen\" type=\"button\" class=\"btn btn-default\" ng-click=\"datepicker.open($event)\" ng-disabled=\"to.disabled\">\r\n        <iron-icon id=\"previewIcon\" icon=\"event\" class=\"x-scope iron-icon-0 x-scope iron-icon-0\">\r\n          <svg viewBox=\"0 0 24 24\" preserveAspectRatio=\"xMidYMid meet\" class=\"style-scope iron-icon\" style=\"pointer-events: none; display: block; width: 100%; height: 100%;\">\r\n            <g class=\"style-scope iron-icon\">\r\n              <path d=\"M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z\" class=\"style-scope iron-icon\"></path>\r\n            </g>\r\n          </svg>\r\n        </iron-icon>\r\n      </button>\r\n    </span>\r\n  </div>\r\n</div>\r\n"
+	module.exports = "<div class=\"float\">\n  <div class=\"flex\">\n    <p class=\"input-group\">\n      <input  type=\"text\"\n              id=\"{{::id}}\"\n              name=\"{{::id}}\"\n              ng-model=\"model[options.key]\"\n              class=\"form-control\"\n              ng-click=\"datepicker.open($event)\"\n              uib-datepicker-popup=\"{{to.datepickerOptions.format}}\"\n              is-open=\"datepicker.opened\"\n              datepicker-options=\"to.datepickerOptions\" />\n    </p>\n    <span class=\"input-group-btn\">\n      <button class=\"btnCalen\" type=\"button\" class=\"btn btn-default\" ng-click=\"datepicker.open($event)\" ng-disabled=\"to.disabled\">\n        <iron-icon id=\"previewIcon\" icon=\"event\" class=\"x-scope iron-icon-0 x-scope iron-icon-0\">\n          <svg viewBox=\"0 0 24 24\" preserveAspectRatio=\"xMidYMid meet\" class=\"style-scope iron-icon\" style=\"pointer-events: none; display: block; width: 100%; height: 100%;\">\n            <g class=\"style-scope iron-icon\">\n              <path d=\"M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z\" class=\"style-scope iron-icon\"></path>\n            </g>\n          </svg>\n        </iron-icon>\n      </button>\n    </span>\n  </div>\n</div>\n"
 
 /***/ },
 /* 15 */
@@ -426,7 +426,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 16 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\r\n  <div id=\"{{::id}}\" class=\"btn-frame\" ng-click=\"openFrameModal()\">{{ to.buttonText }}</div>\r\n</div>\r\n"
+	module.exports = "<div>\n  <div id=\"{{::id}}\" class=\"btn-frame\" ng-click=\"openFrameModal()\">{{ to.buttonText }}</div>\n</div>\n"
 
 /***/ },
 /* 17 */
@@ -504,7 +504,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 18 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\r\n  <div class=\"iconPreview\" ng-if=\"isUrl(model[options.key])\"><img id=\"previewIcon\" src=\"{{ model[options.key] }}\" /></div>\r\n  <div class=\"iconPreview\" ng-if=\"!isUrl(model[options.key])\"><iron-icon id=\"previewIcon\" icon=\"{{ model[options.key] }}\"></iron-icon></div>\r\n  <div id=\"{{::id}}\" class=\"btn-gold demo\" ng-click=\"changeIconModal()\">{{ 'global.change'| translate }}</div>\r\n</div>\r\n"
+	module.exports = "<div>\n  <div class=\"iconPreview\" ng-if=\"isUrl(model[options.key])\"><img id=\"previewIcon\" src=\"{{ model[options.key] }}\" /></div>\n  <div class=\"iconPreview\" ng-if=\"!isUrl(model[options.key])\"><iron-icon id=\"previewIcon\" icon=\"{{ model[options.key] }}\"></iron-icon></div>\n  <div id=\"{{::id}}\" class=\"btn-gold demo\" ng-click=\"changeIconModal()\">{{ 'global.change'| translate }}</div>\n</div>\n"
 
 /***/ },
 /* 19 */
@@ -556,7 +556,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 20 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"input-group\">\r\n  <span class=\"input-group-btn\">\r\n    <span class=\"btn btn-primary btn-file\">\r\n      <input type=\"file\"\r\n             ng-model=\"model[options.key]\"\r\n             accept=\"image/*\"\r\n             name=\"files\"\r\n             maxsize=\"{{to.imageUploadOptions.max-size}}\"\r\n             base-sixty-four-input=\"base-sixty-four-input\"\r\n             />\r\n\r\n    </span>\r\n  </span>\r\n  <input type=\"text\" value=\"{{model[options.key].filename}}\" readonly=\"readonly\" class=\"form-control\"/>\r\n  <img ng-if=\"model[options.key].url\" src=\"{{model[options.key].url}}\" width=\"200px\" />\r\n</div>\r\n\r\n<!-- base-sixty-four-input=\"base-sixty-four-input\"  -->\r\n"
+	module.exports = "<div class=\"input-group\">\n  <span class=\"input-group-btn\">\n    <span class=\"btn btn-primary btn-file\">\n      <input type=\"file\"\n             ng-model=\"model[options.key]\"\n             accept=\"image/*\"\n             name=\"files\"\n             maxsize=\"{{to.imageUploadOptions.max-size}}\"\n             base-sixty-four-input=\"base-sixty-four-input\"\n             />\n\n    </span>\n  </span>\n  <input type=\"text\" value=\"{{model[options.key].filename}}\" readonly=\"readonly\" class=\"form-control\"/>\n  <img ng-if=\"model[options.key].url\" src=\"{{model[options.key].url}}\" width=\"200px\" />\n</div>\n\n<!-- base-sixty-four-input=\"base-sixty-four-input\"  -->\n"
 
 /***/ },
 /* 21 */
@@ -701,7 +701,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 23 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"radio-group\">\r\n  <div ng-repeat=\"(key, option) in to.options\" class=\"checkbox\">\r\n    <label>\r\n    {{option[to.labelProp || 'name']}}\r\n    </label>\r\n      <input type=\"checkbox\"\r\n             id=\"{{id + '_'+ $index}}\"\r\n             ng-model=\"multiCheckbox.checked[$index]\"\r\n             ng-change=\"multiCheckbox.change()\">\r\n  </div>\r\n</div>\r\n"
+	module.exports = "<div class=\"radio-group\">\n  <div ng-repeat=\"(key, option) in to.options\" class=\"checkbox\">\n    <label>\n    {{option[to.labelProp || 'name']}}\n    </label>\n      <input type=\"checkbox\"\n             id=\"{{id + '_'+ $index}}\"\n             ng-model=\"multiCheckbox.checked[$index]\"\n             ng-change=\"multiCheckbox.change()\">\n  </div>\n</div>\n"
 
 /***/ },
 /* 24 */
@@ -747,7 +747,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 25 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\r\n  <div class=\"clearfix\">\r\n    <div class=\"row\"\r\n         style=\"margin-bottom:14px\"\r\n         ng-repeat=\"item in model[options.key] track by $index\"\r\n         ng-init=\"itemOptions = copyItemOptions()\">\r\n\r\n       <formly-field class=\"no-padding col-xs-10\"\r\n                     options=\"itemOptions\"\r\n                     model=\"model[options.key]\"\r\n                     form=\"form\"\r\n                     index=\"$index\">\r\n       </formly-field>\r\n       <div class=\"col-xs-2\" style=\"margin-top:6px\">\r\n        <a ng-click=\"model[options.key].splice($index, 1)\">x {{ 'global.remove'| translate }}</a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <div>\r\n    <button type=\"button\" class=\"btn-add btn btn-success btn-sm\" ng-click=\"model[options.key].push('')\">{{ 'global.add'| translate }}</button>\r\n  </div>\r\n</div>\r\n"
+	module.exports = "<div>\n  <div class=\"clearfix\">\n    <div class=\"row\"\n         style=\"margin-bottom:14px\"\n         ng-repeat=\"item in model[options.key] track by $index\"\n         ng-init=\"itemOptions = copyItemOptions()\">\n\n       <formly-field class=\"no-padding col-xs-10\"\n                     options=\"itemOptions\"\n                     model=\"model[options.key]\"\n                     form=\"form\"\n                     index=\"$index\">\n       </formly-field>\n       <div class=\"col-xs-2\" style=\"margin-top:6px\">\n        <a ng-click=\"model[options.key].splice($index, 1)\">x {{ 'global.remove'| translate }}</a>\n      </div>\n    </div>\n  </div>\n  <div>\n    <button type=\"button\" class=\"btn-add btn btn-success btn-sm\" ng-click=\"model[options.key].push('')\">{{ 'global.add'| translate }}</button>\n  </div>\n</div>\n"
 
 /***/ },
 /* 26 */
@@ -791,7 +791,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 27 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"radio-group\">\r\n  <div ng-repeat=\"(key, option) in to.options\" ng-class=\"{ 'radio': !to.inline, 'radio-inline': to.inline }\">\r\n    <label>\r\n      <input type=\"radio\"\r\n             id=\"{{id + '_'+ $index}}\"\r\n             tabindex=\"0\"\r\n             ng-value=\"option[to.valueProp || 'value']\"\r\n             ng-model=\"model[options.key]\">\r\n      {{option[to.labelProp || 'name']}}\r\n    </label>\r\n  </div>\r\n</div>\r\n"
+	module.exports = "<div class=\"radio-group\">\n  <div ng-repeat=\"(key, option) in to.options\" ng-class=\"{ 'radio': !to.inline, 'radio-inline': to.inline }\">\n    <label>\n      <input type=\"radio\"\n             id=\"{{id + '_'+ $index}}\"\n             tabindex=\"0\"\n             ng-value=\"option[to.valueProp || 'value']\"\n             ng-model=\"model[options.key]\">\n      {{option[to.labelProp || 'name']}}\n    </label>\n  </div>\n</div>\n"
 
 /***/ },
 /* 28 */
@@ -865,7 +865,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 29 */
 /***/ function(module, exports) {
 
-	module.exports = "<div>\r\n\t<!--loop through each element in model array-->\r\n\t<div class=\"{{hideRepeat}}\">\r\n    <div class=\"repeat\">\r\n      <label for=\"\">{{to.label}}</label>\r\n      <p class=\"AddNewButton\">\r\n        <button type=\"button\" class=\"btn_add btn-primary\" ng-click=\"addNew()\" >{{to.btnText}}</button>\r\n      </p>\r\n    </div>\r\n    <div class=\"repeatsection\" ng-repeat=\"element in model[options.key]\" ng-init=\"fields = copyFields(to.fields)\">\r\n      <formly-form fields=\"fields\"\r\n                   model=\"element\"\r\n                   form=\"form\">\r\n      </formly-form>\r\n      <div>\r\n        <button type=\"button\" class=\"btn_rem btn-danger\" ng-click=\"model[options.key].splice($index, 1)\">\r\n          {{ 'global.remove'| translate }}\r\n        </button>\r\n      </div>\r\n  </div>\r\n</div>\r\n"
+	module.exports = "<div>\n\t<!--loop through each element in model array-->\n\t<div class=\"{{hideRepeat}}\">\n    <div class=\"repeat\">\n      <label for=\"\">{{to.label}}</label>\n      <p class=\"AddNewButton\">\n        <button type=\"button\" class=\"btn_add btn-primary\" ng-click=\"addNew()\" >{{to.btnText}}</button>\n      </p>\n    </div>\n    <div class=\"repeatsection\" ng-repeat=\"element in model[options.key]\" ng-init=\"fields = copyFields(to.fields)\">\n      <formly-form fields=\"fields\"\n                   model=\"element\"\n                   form=\"form\">\n      </formly-form>\n      <div>\n        <button type=\"button\" class=\"btn_rem btn-danger\" ng-click=\"model[options.key].splice($index, 1)\">\n          {{ 'global.remove'| translate }}\n        </button>\n      </div>\n  </div>\n</div>\n"
 
 /***/ },
 /* 30 */
@@ -1050,7 +1050,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 35 */
 /***/ function(module, exports) {
 
-	module.exports = "<div ng-class=\"{'input-group': to.addonLeft || to.addonRight}\">\r\n    <div class=\"input-group-addon\"\r\n         ng-if=\"to.addonLeft\"\r\n         ng-style=\"{cursor: to.addonLeft.onClick ? 'pointer' : 'inherit'}\"\r\n         ng-click=\"to.addonLeft.onClick(options, this, $event)\">\r\n        <i class=\"{{to.addonLeft.class}}\" ng-if=\"to.addonLeft.class\"></i>\r\n        <span ng-if=\"to.addonLeft.text\">{{to.addonLeft.text}}</span>\r\n    </div>\r\n    <formly-transclude></formly-transclude>\r\n    <div class=\"input-group-addon\"\r\n         ng-if=\"to.addonRight\"\r\n         ng-style=\"{cursor: to.addonRight.onClick ? 'pointer' : 'inherit'}\"\r\n         ng-click=\"to.addonRight.onClick(options, this, $event)\">\r\n        <i class=\"{{to.addonRight.class}}\" ng-if=\"to.addonRight.class\"></i>\r\n        <span ng-if=\"to.addonRight.text\">{{to.addonRight.text}}</span>\r\n    </div>\r\n</div>\r\n"
+	module.exports = "<div ng-class=\"{'input-group': to.addonLeft || to.addonRight}\">\n    <div class=\"input-group-addon\"\n         ng-if=\"to.addonLeft\"\n         ng-style=\"{cursor: to.addonLeft.onClick ? 'pointer' : 'inherit'}\"\n         ng-click=\"to.addonLeft.onClick(options, this, $event)\">\n        <i class=\"{{to.addonLeft.class}}\" ng-if=\"to.addonLeft.class\"></i>\n        <span ng-if=\"to.addonLeft.text\">{{to.addonLeft.text}}</span>\n    </div>\n    <formly-transclude></formly-transclude>\n    <div class=\"input-group-addon\"\n         ng-if=\"to.addonRight\"\n         ng-style=\"{cursor: to.addonRight.onClick ? 'pointer' : 'inherit'}\"\n         ng-click=\"to.addonRight.onClick(options, this, $event)\">\n        <i class=\"{{to.addonRight.class}}\" ng-if=\"to.addonRight.class\"></i>\n        <span ng-if=\"to.addonRight.text\">{{to.addonRight.text}}</span>\n    </div>\n</div>\n"
 
 /***/ },
 /* 36 */
