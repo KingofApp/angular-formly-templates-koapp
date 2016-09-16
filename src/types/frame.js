@@ -38,13 +38,14 @@ export default ngModule => {
 
       function openFrameModal() {
         $scope.iframe = {
-          src   : $scope.to.url || widgetDataService.getPluginData($scope.to.fullApp, $scope.to.uniqueId, 'src'),
-          data  : widgetDataService.getData($scope.to.fullApp, $scope.to.uniqueId),
+          src   : $scope.to.url || widgetDataService.getPluginData($scope.to.originalApp, $scope.to.uniqueId, 'src'),
+          data  : widgetDataService.getData($scope.to.originalApp, $scope.to.uniqueId),
           close : ngDialog.close
         }
         console.log("[I] iframeData ", $scope.iframe);
         ngDialog.open({
-            template: 'bower_components/angular-formly-templates-koapp/src/types/frameModal.html',
+            template: require('./frameModal.html'),
+            plain: true,
             scope: $scope,
             className: 'ngdialog-theme-plain ngDialogBig custom-size'
         });
