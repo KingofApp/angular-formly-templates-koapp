@@ -81,7 +81,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	__webpack_require__(6)(ngModule);
 	__webpack_require__(9)(ngModule);
-	__webpack_require__(33)(ngModule);
+	__webpack_require__(34)(ngModule);
 
 	exports['default'] = ngModuleName;
 	module.exports = exports['default'];
@@ -178,16 +178,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	  __webpack_require__(12)(ngModule);
 	  __webpack_require__(13)(ngModule);
 	  __webpack_require__(15)(ngModule);
-	  __webpack_require__(17)(ngModule);
-	  __webpack_require__(19)(ngModule);
-	  __webpack_require__(21)(ngModule);
+	  __webpack_require__(18)(ngModule);
+	  __webpack_require__(20)(ngModule);
 	  __webpack_require__(22)(ngModule);
-	  __webpack_require__(24)(ngModule);
-	  __webpack_require__(26)(ngModule);
-	  __webpack_require__(28)(ngModule);
-	  __webpack_require__(30)(ngModule);
+	  __webpack_require__(23)(ngModule);
+	  __webpack_require__(25)(ngModule);
+	  __webpack_require__(27)(ngModule);
+	  __webpack_require__(29)(ngModule);
 	  __webpack_require__(31)(ngModule);
 	  __webpack_require__(32)(ngModule);
+	  __webpack_require__(33)(ngModule);
 	};
 
 	module.exports = exports['default'];
@@ -394,13 +394,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      function openFrameModal() {
 	        $scope.iframe = {
-	          src: $scope.to.url || widgetDataService.getPluginData($scope.to.fullApp, $scope.to.uniqueId, 'src'),
-	          data: widgetDataService.getData($scope.to.fullApp, $scope.to.uniqueId),
+	          src: $scope.to.url || widgetDataService.getPluginData($scope.to.originalApp, $scope.to.uniqueId, 'src'),
+	          data: widgetDataService.getData($scope.to.originalApp, $scope.to.uniqueId),
 	          close: ngDialog.close
 	        };
 	        console.log("[I] iframeData ", $scope.iframe);
 	        ngDialog.open({
-	          template: 'bower_components/angular-formly-templates-koapp/src/types/frameModal.html',
+	          template: __webpack_require__(17),
+	          plain: true,
 	          scope: $scope,
 	          className: 'ngdialog-theme-plain ngDialogBig custom-size'
 	        });
@@ -430,6 +431,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 17 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"maker big\" style=\"height: 100%;\">\n  <style ng-if=\"to.width\">.custom-size .ngdialog-content { width: {{to.width}}px !important; }</style>\n  <style ng-if=\"to.height\">.custom-size .ngdialog-content { height: {{to.height}}px !important; }</style>\n  <style ng-if=\"!to.height\">.custom-size .ngdialog-content { height: 100% !important; }</style>\n  <koapp-widget src=\"iframe.src\" data=\"iframe.data\" on-close=\"iframe.close()\"></koapp-widget>\n</div>\n"
+
+/***/ },
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -452,7 +459,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    formlyConfigProvider.setType({
 	      name: 'iconpicker',
-	      template: __webpack_require__(18),
+	      template: __webpack_require__(19),
 	      wrapper: ['koappLabel', 'koappHasError'],
 	      defaultOptions: {
 	        ngModelAttrs: ngModelAttrs
@@ -501,13 +508,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports) {
 
 	module.exports = "<div>\n  <div class=\"iconPreview\" ng-if=\"isUrl(model[options.key])\"><img id=\"previewIcon\" src=\"{{ model[options.key] }}\" /></div>\n  <div class=\"iconPreview\" ng-if=\"!isUrl(model[options.key])\"><iron-icon id=\"previewIcon\" icon=\"{{ model[options.key] }}\"></iron-icon></div>\n  <div id=\"{{::id}}\" class=\"btn-gold demo\" ng-click=\"changeIconModal()\">{{ 'global.change'| translate }}</div>\n</div>\n"
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -530,7 +537,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    formlyConfigProvider.setType({
 	      name: 'imageupload',
-	      template: __webpack_require__(20),
+	      template: __webpack_require__(21),
 	      wrapper: ['koappLabel', 'koappHasError'],
 	      defaultOptions: {
 	        ngModelAttrs: ngModelAttrs
@@ -553,13 +560,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"input-group\">\n  <span class=\"input-group-btn\">\n    <span class=\"btn btn-primary btn-file\">\n      <input type=\"file\"\n             ng-model=\"model[options.key]\"\n             accept=\"image/*\"\n             name=\"files\"\n             maxsize=\"{{to.imageUploadOptions.max-size}}\"\n             base-sixty-four-input=\"base-sixty-four-input\"\n             />\n\n    </span>\n  </span>\n  <input type=\"text\" value=\"{{model[options.key].filename}}\" readonly=\"readonly\" class=\"form-control\"/>\n  <img ng-if=\"model[options.key].url\" src=\"{{model[options.key].url}}\" width=\"200px\" />\n</div>\n\n<!-- base-sixty-four-input=\"base-sixty-four-input\"  -->\n"
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -584,7 +591,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -599,7 +606,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function addCheckboxType(formlyConfigProvider) {
 	    formlyConfigProvider.setType({
 	      name: 'multiCheckbox',
-	      template: __webpack_require__(23),
+	      template: __webpack_require__(24),
 	      wrapper: ['koappLabel', 'koappHasError'],
 	      apiCheck: function apiCheck(check) {
 	        return {
@@ -698,13 +705,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"radio-group\">\n  <div ng-repeat=\"(key, option) in to.options\" class=\"checkbox\">\n    <label>\n    {{option[to.labelProp || 'name']}}\n    </label>\n      <input type=\"checkbox\"\n             id=\"{{id + '_'+ $index}}\"\n             ng-model=\"multiCheckbox.checked[$index]\"\n             ng-change=\"multiCheckbox.change()\">\n  </div>\n</div>\n"
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -719,7 +726,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function addMultiInputType(formlyConfigProvider) {
 	    formlyConfigProvider.setType({
 	      name: 'multiInput',
-	      template: __webpack_require__(25),
+	      template: __webpack_require__(26),
 	      defaultOptions: {
 	        noFormControl: true,
 	        wrapper: ['koappLabel', 'koappHasError'],
@@ -744,13 +751,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports) {
 
 	module.exports = "<div>\n  <div class=\"clearfix\">\n    <div class=\"row\"\n         style=\"margin-bottom:14px\"\n         ng-repeat=\"item in model[options.key] track by $index\"\n         ng-init=\"itemOptions = copyItemOptions()\">\n\n       <formly-field class=\"no-padding col-xs-10\"\n                     options=\"itemOptions\"\n                     model=\"model[options.key]\"\n                     form=\"form\"\n                     index=\"$index\">\n       </formly-field>\n       <div class=\"col-xs-2\" style=\"margin-top:6px\">\n        <a ng-click=\"model[options.key].splice($index, 1)\">x {{ 'global.remove'| translate }}</a>\n      </div>\n    </div>\n  </div>\n  <div>\n    <button type=\"button\" class=\"btn-add btn btn-success btn-sm\" ng-click=\"model[options.key].push('')\">{{ 'global.add'| translate }}</button>\n  </div>\n</div>\n"
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -765,7 +772,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function addRadioType(formlyConfigProvider) {
 	    formlyConfigProvider.setType({
 	      name: 'radio',
-	      template: __webpack_require__(27),
+	      template: __webpack_require__(28),
 	      wrapper: ['koappLabel', 'koappHasError'],
 	      defaultOptions: {
 	        noFormControl: false
@@ -788,13 +795,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"radio-group\">\n  <div ng-repeat=\"(key, option) in to.options\" ng-class=\"{ 'radio': !to.inline, 'radio-inline': to.inline }\">\n    <label>\n      <input type=\"radio\"\n             id=\"{{id + '_'+ $index}}\"\n             tabindex=\"0\"\n             ng-value=\"option[to.valueProp || 'value']\"\n             ng-model=\"model[options.key]\">\n      {{option[to.labelProp || 'name']}}\n    </label>\n  </div>\n</div>\n"
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -810,7 +817,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var unique = 1;
 	    formlyConfigProvider.setType({
 	      name: 'repeatSection',
-	      template: __webpack_require__(29),
+	      template: __webpack_require__(30),
 	      controller: function controller($scope) {
 	        $scope.formOptions = { formState: $scope.formState };
 	        $scope.addNew = addNew;
@@ -862,13 +869,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports) {
 
 	module.exports = "<div>\n\t<!--loop through each element in model array-->\n\t<div class=\"{{hideRepeat}}\">\n    <div class=\"repeat\">\n      <label for=\"\">{{to.label}}</label>\n      <p class=\"AddNewButton\">\n        <button type=\"button\" class=\"btn_add btn-primary\" ng-click=\"addNew()\" >{{to.btnText}}</button>\n      </p>\n    </div>\n    <div class=\"repeatsection\" ng-repeat=\"element in model[options.key]\" ng-init=\"fields = copyFields(to.fields)\">\n      <formly-form fields=\"fields\"\n                   model=\"element\"\n                   form=\"form\">\n      </formly-form>\n      <div>\n        <button type=\"button\" class=\"btn_rem btn-danger\" ng-click=\"model[options.key].splice($index, 1)\">\n          {{ 'global.remove'| translate }}\n        </button>\n      </div>\n  </div>\n</div>\n"
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -917,7 +924,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -956,7 +963,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 32 */
+/* 33 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -981,7 +988,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 33 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -992,11 +999,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _addons = __webpack_require__(34);
+	var _addons = __webpack_require__(35);
 
 	var _addons2 = _interopRequireDefault(_addons);
 
-	var _description = __webpack_require__(36);
+	var _description = __webpack_require__(37);
 
 	var _description2 = _interopRequireDefault(_description);
 
@@ -1008,7 +1015,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 34 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1021,7 +1028,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  ngModule.run(addAddonsManipulator);
 
 	  function addAddonsManipulator(formlyConfig, formlyKoappApiCheck) {
-	    var addonTemplate = __webpack_require__(35);
+	    var addonTemplate = __webpack_require__(36);
 	    var addonChecker = formlyKoappApiCheck.shape({
 	      'class': formlyKoappApiCheck.string.optional,
 	      text: formlyKoappApiCheck.string.optional,
@@ -1047,13 +1054,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = exports['default'];
 
 /***/ },
-/* 35 */
+/* 36 */
 /***/ function(module, exports) {
 
 	module.exports = "<div ng-class=\"{'input-group': to.addonLeft || to.addonRight}\">\n    <div class=\"input-group-addon\"\n         ng-if=\"to.addonLeft\"\n         ng-style=\"{cursor: to.addonLeft.onClick ? 'pointer' : 'inherit'}\"\n         ng-click=\"to.addonLeft.onClick(options, this, $event)\">\n        <i class=\"{{to.addonLeft.class}}\" ng-if=\"to.addonLeft.class\"></i>\n        <span ng-if=\"to.addonLeft.text\">{{to.addonLeft.text}}</span>\n    </div>\n    <formly-transclude></formly-transclude>\n    <div class=\"input-group-addon\"\n         ng-if=\"to.addonRight\"\n         ng-style=\"{cursor: to.addonRight.onClick ? 'pointer' : 'inherit'}\"\n         ng-click=\"to.addonRight.onClick(options, this, $event)\">\n        <i class=\"{{to.addonRight.class}}\" ng-if=\"to.addonRight.class\"></i>\n        <span ng-if=\"to.addonRight.text\">{{to.addonRight.text}}</span>\n    </div>\n</div>\n"
 
 /***/ },
-/* 36 */
+/* 37 */
 /***/ function(module, exports) {
 
 	'use strict';
