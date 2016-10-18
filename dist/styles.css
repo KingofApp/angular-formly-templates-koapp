@@ -78,10 +78,11 @@ div.repeat label {
 div.form-group input,
 textarea, select,
 .radio-group,
+div.mce-tinymce,
 div.input-group,
 color-picker,
 div.formly-field-multiInput div.form-group > div > div:last-child,
-div.form-group div.float div.mce-tinymce {
+div.form-group div.float {
 	flex: 3;
 	-webkit-flex: 3;
 	outline: 0;
