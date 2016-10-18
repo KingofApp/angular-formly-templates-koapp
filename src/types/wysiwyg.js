@@ -5,7 +5,6 @@ export default ngModule => {
     formlyConfigProvider.setType({
       name: 'wysiwyg',
       template: '<textarea ui-tinymce ng-model="model[options.key]"></textarea>',
-      //template: '<text-angular ng-model="model[options.key]"></text-angular>',
       wrapper: ['koappLabel', 'koappHasError']
     });
   }
