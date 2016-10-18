@@ -1,4 +1,4 @@
-//! angular-formly-templates-koapp version 1.0.34 built with ♥ by KingofApp <theking@kingofapp.com> (ó ì_í)=óò=(ì_í ò)
+//! angular-formly-templates-koapp version 1.0.35 built with ♥ by KingofApp <theking@kingofapp.com> (ó ì_í)=óò=(ì_í ò)
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
@@ -77,7 +77,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    prefix: 'angular-formly-koapp'
 	  }
 	}));
-	ngModule.constant('formlyKoappVersion', ("1.0.34"));
+	ngModule.constant('formlyKoappVersion', ("1.0.35"));
 
 	__webpack_require__(6)(ngModule);
 	__webpack_require__(9)(ngModule);
@@ -978,7 +978,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function addCheckboxType(formlyConfigProvider) {
 	    formlyConfigProvider.setType({
 	      name: 'wysiwyg',
-	      template: '<text-angular ng-model="model[options.key]"></text-angular>',
+	      template: '<form method="post"><textarea ui-tinymce></textarea></form>',
+	      //template: '<text-angular ng-model="model[options.key]"></text-angular>',
 	      wrapper: ['koappLabel', 'koappHasError']
 	    });
 	  }
