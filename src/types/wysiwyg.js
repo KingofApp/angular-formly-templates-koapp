@@ -4,9 +4,9 @@ export default ngModule => {
   function addCheckboxType(formlyConfigProvider) {
     formlyConfigProvider.setType({
       name: 'wysiwyg',
-      template: '<text-angular ng-model="model[options.key]"></div>',
+      template: '<text-angular ng-model="model[options.key]"></text-angular>',
       wrapper: ['koappLabel', 'koappHasError']
     });
   }
-  
+
 };
