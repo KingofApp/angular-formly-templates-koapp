@@ -135,7 +135,7 @@ div.radio-group input {
 	appearance: none;
 	 -moz-appearance: none;
 	 -webkit-appearance: none;
-	 border: 1px solid #c8c6c6;
+	 border: 1px solid #333333;
 	 width: 20px;
 	 height: 20px;
 	 border-radius: 0;
@@ -145,7 +145,7 @@ div.radio-group input {
 }
 
 div.radio-group input:checked:before {
-	background-color: #a79a65;
+	background-color: #13C487;
 	border: 6px solid #ffffff;
 	box-sizing: border-box;
 }
@@ -154,7 +154,7 @@ div.formly-field-input input[type="checkbox"], div.checkbox input[type="checkbox
 	appearance: none;
 	 -moz-appearance: none;
 	 -webkit-appearance: none;
-	 border: 1px solid #c8c6c6;
+	 border: 1px solid #333333;
 	 width: 20px;
 	 height: 20px;
 	 border-radius: 0;
@@ -172,7 +172,7 @@ div.form-group div[id^="taTextElement"] {
 }
 
 div.formly-field-input input[type="checkbox"]:checked, div.checkbox input[type="checkbox"]:checked {
-	background-color: #a79a65;
+	background-color: #13C487;
 	background-image: url("http://www.phantasyentertainments.com/site/wp-content/uploads/2015/04/check.white_.png");
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -258,7 +258,7 @@ div.repeatsection {
 }
 
 .btn_add, .btn-add {
-	background-color: #a79a64;
+	background-color: #13C487;
 	color: #ffffff;
 	display: block;
 	width: 230px !important;
