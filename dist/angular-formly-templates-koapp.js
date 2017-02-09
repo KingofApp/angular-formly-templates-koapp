@@ -978,7 +978,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function addCheckboxType(formlyConfigProvider) {
 	    formlyConfigProvider.setType({
 	      name: 'wysiwyg',
-	      template: '<textarea ui-tinymce ng-model="model[options.key]"></textarea>',
+	      template: '<textarea ui-tinymce="tinymceOptions" ng-model="model[options.key]"></textarea>',
 	      wrapper: ['koappLabel', 'koappHasError']
 	    });
 	  }
