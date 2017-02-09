@@ -1,7 +1,7 @@
 export default ngModule => {
-  ngModule.config(addWysiwyg);
+  ngModule.config(addCheckboxType);
 
-  function addWysiwyg(formlyConfigProvider) {
+  function addCheckboxType(formlyConfigProvider) {
     formlyConfigProvider.setType({
       name: 'wysiwyg',
       template: '<textarea ui-tinymce="tinymceOptions" ng-model="model[options.key]"></textarea>',
