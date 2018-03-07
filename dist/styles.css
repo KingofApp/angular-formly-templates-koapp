@@ -132,9 +132,9 @@ p.help-block {
 }
 
 div.radio-group input {
-	appearance: none;
+	/*appearance: none;
 	 -moz-appearance: none;
-	 -webkit-appearance: none;
+	 -webkit-appearance: none;*/
 	 border: 1px solid #333333;
 	 width: 20px;
 	 height: 20px;
